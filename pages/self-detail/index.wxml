@@ -1,0 +1,31 @@
+<!--pages/self-detail/index.wxml-->
+<view class='self-detail'>
+  <view class='self-items'>
+    <text>头像</text>
+    <image src='../../img/icon/logo.png' alt='touxiang'></image>
+  </view>
+  <view class='self-items'>
+    <text>性别</text>
+    <radio-group>
+      <radio checked='{{true}}'>男</radio>
+      <radio>女</radio>
+    </radio-group>
+    <image src='../../img/icon/logo.png' alt='touxiang'></image>
+  </view>
+  <view class='self-items'>
+    <text>年龄</text>
+    <text>36</text>
+  </view>
+  <view class='self-items'>
+    <text>收货人姓名</text>
+    <text>36</text>
+  </view>
+  <view class='self-items'>
+    <text>收货人电话</text>
+    <text>36</text>
+  </view>
+  <view class='self-items'>
+    <text>收货人地址</text>
+    <text>36</text>
+  </view>
+</view>

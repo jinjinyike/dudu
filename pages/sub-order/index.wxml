@@ -1,0 +1,30 @@
+<!--pages/sub-order/index.wxml-->
+<view class='bgcon'>
+  <view class='pro-cont'>
+    <view class='pro-intd'>
+      <image src='../../img/icons/logo.png' alt='商品'></image>
+      <view class='pro-sell'>
+        <text>人脸支付智慧零售新体验
+</text>
+        <text>1台</text>
+        <text>¥6748</text>
+      </view>
+    </view>
+    <view class='order-info'>
+      <view>业务员：赵正明</view>
+      <view>收货人：赵正明</view>
+      <view>手机号：赵正明</view>
+      <view>订单编号：赵正明</view>
+      <view>收货地址：赵正明</view>
+    </view>
+    <view class='order-money'>实付款：¥868</view>
+  </view>
+  <view class='bg'></view>
+  <view class='.pro-cont wx'>
+    <image src='../../img/icons/logo.png' alt='微信'></image>
+    <text>微信支付</text>
+  </view>
+</view>
+<view class='pay'>
+  <button>立即支付</button>
+</view>

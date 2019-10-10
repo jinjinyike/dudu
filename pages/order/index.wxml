@@ -1,0 +1,22 @@
+<!--pages/order/index.wxml-->
+<view class='pro-cont box'>
+  <view class='pro-intd'>
+    <image src='../../img/icons/logo.png' alt='商品'></image>
+    <view class='pro-sell'>
+      <text>人脸支付智慧零售新体验
+</text>
+      <text>1台</text>
+      <text>¥6748</text>
+    </view>
+  </view>
+  <view class='order-info'>
+    <view>业务员：赵正明</view>
+    <view>收货人：赵正明</view>
+    <view>手机号：赵正明</view>
+    <view>订单编号：赵正明</view>
+    <view>收货地址：赵正明</view>
+    <view>下单时间：赵正明</view>
+  </view>
+  <view class='order-money flex'>
+    <text>实付款：¥868</text><button class='pay-sub'>立即支付</button></view>
+  </view>

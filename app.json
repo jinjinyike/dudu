@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/evuluate/index",
+    "pages/order/index",
+    "pages/self-detail/index",
+    "pages/self/index",
+    "pages/sub-order/index",
+    "pages/share/index",
+    "pages/detail/index",
+    "pages/face/index",
+    "pages/mall/index",
+    "pages/phone/index",
+    "pages/login/login",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/home/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "嘟嘟商城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#59ABEA",
+    "borderStyle": "black",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/face/index",
+        "text": "嘟嘟刷脸"
+      },
+      {
+        "pagePath": "pages/mall/index",
+        "text": "嘟嘟商城"
+      },
+      {
+        "pagePath": "pages/self/index",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+<!--pages/share/index.wxml-->
+<!-- <text>pages/share/index.wxml</text> -->
+<view class='con'>
+  <view class='pro-intd'>
+    <image src='../../img/icons/logo.png' alt='商品'></image>
+    <view class='pro-sell'>
+      <text>人脸支付智慧零售新体验
+</text>
+      <text>货号：6748</text>
+      <text>单价：6748</text>
+      <text>分享次数：6748</text>
+    </view>
+  </view>
+  <view class='share-money'>
+    <view>本次分享你可赚</view>
+    <view class='nub'>100元</view>
+  </view>
+  <image class='share-img' src='../../img/icons/logo.png' alt='share'>
+  </image>
+  <view class='share-text'>点击保存可分享到微信好友、朋友圈、微信群</view>
+  <!-- <button class='share-btn'>保存图片</button> -->
+  <view class='share-god'>分享赚钱规则</view>
+</view>

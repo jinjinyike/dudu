@@ -1,0 +1,80 @@
+<!--pages/mall/index.wxml-->
+<view class='p20'>
+  <view class='select-title blue'>
+    <image src='../../img/icons/logo.png' alt='精选活动'></image>
+    <text>商场爆款</text>
+  </view>
+  <view class='hot-con'>
+    <view class='hot-one'>
+      <image src='../../img/icons/logo.png' alt='图片' class='one-img'></image>
+      <view class='hot-text'>
+        <view class='number'>
+          <image src='../../img/icons/logo.png' alt='图片'></image>
+          <text>NO.1</text>
+        </view>
+        <text>【人脸支付智慧零售新体验】无需手机</text>
+      </view>
+      <view class='price'>
+        <text>¥998</text>
+        <text>去抢购 >></text>
+      </view>
+    </view>
+    <view class='hot-other'>
+      <view class='hot-one hot-two'>
+        <view class='flex'>
+          <image src='../../img/icons/logo.png' alt='图片' class='two-img'></image>
+          <view class='hot-text'>
+            <view class='number'>
+              <image src='../../img/icons/logo.png' alt='图片'></image>
+              <text>NO.2</text>
+            </view>
+            <text>【人脸支付智慧零售新体验】无需手机，提升效率，</text>
+          </view>
+        </view>
+
+        <view class='price'>
+          <text>¥998</text>
+          <text>去抢购 >></text>
+        </view>
+      </view>
+      <view class='hot-one hot-two hot-three'>
+        <view class='flex'>
+          <image src='../../img/icons/logo.png' alt='图片' class='two-img'></image>
+          <view class='hot-text'>
+            <view class='number'>
+              <image src='../../img/icons/logo.png' alt='图片'></image>
+              <text>NO.2</text>
+            </view>
+            <text>【人脸支付智慧零售新体验】无需手机，提升效率，</text>
+          </view>
+        </view>
+
+        <view class='price'>
+          <text>¥998</text>
+          <text>去抢购 >></text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='select-title'>
+    <image src='../../img/icons/logo.png' alt='精选活动'></image>
+    <text>精选活动</text>
+  </view>
+  <view class='list-con'>
+    <view class='list-item' wx:for='list' wx:key='index'>
+      <image src='../../img/icons/logo.png' alt='图片'></image>
+      <view class='p20'>
+        <view class='item-text'>
+          <text>【人脸支付智慧零售新体验】</text>无需手机，提升效率，更加便捷，可对接ERP
+        </view>
+        <view class='price-con'>
+          <view>￥
+            <text>998</text>
+          </view>
+          <view class='buy'>立即订购</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

@@ -1,0 +1,10 @@
+/* pages/evuluate/index.wxss */
+.textarea{
+  width: 630rpx;
+  border: 1px solid #BFBFBF;
+  background: rgba(245,244,249,1);
+  border-radius: 12rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  height: 250rpx;
+}

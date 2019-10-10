@@ -1,0 +1,16 @@
+<!--pages/phone/index.wxml-->
+<view>
+  <view class='input-con'>
+    <view class='relate'>
+      <input placeholder='请输入手机号码' maxlength='11'></input>
+      <text class='code'>获取验证码</text>
+    </view>
+    <input placeholder='请输入验证码' maxlength='4'></input>
+  </view>
+  <button class='submit'>提交绑定
+  </button>
+
+</view>
+<view class='logo'>
+  <image src='../../img/icons/logo.png'></image>
+</view>

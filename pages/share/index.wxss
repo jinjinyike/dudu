@@ -1,0 +1,63 @@
+/* pages/share/index.wxss */
+.con{
+  padding: 30rpx 40rpx;
+}
+.pro-intd{
+  display: flex;
+  align-items: center;
+  padding-bottom: 40rpx;
+  border-bottom: 1px solid #EEEEEE;
+}
+.pro-intd image{
+  width: 160rpx;
+  height: 160rpx;
+}
+.pro-sell{
+  display: inline-flex;
+  flex-direction: column;
+  height: 160rpx;
+  justify-content: space-between;
+  color: #646464;
+  font-size: 24rpx;
+  margin-left: 40rpx;
+}
+.share-money{
+  /* height: 183rpx; */
+  background: #FBEFEF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: #F74D4D;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 40rpx;
+  padding: 45rpx;
+  border-radius: 15rpx;
+}
+.nub{
+  font-size: 48rpx;
+  margin-top: 40rpx;
+}
+.share-img{
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 80rpx auto 0;
+
+}
+.share-text{
+  color: #646464;
+  font-size: 20rpx;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.share-god{
+  width: 100%;
+  position: fixed;
+  font-size: 20rpx;
+  left: 0;
+  bottom: 60rpx;
+  text-align: center;
+  color: #646464;
+}

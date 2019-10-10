@@ -1,0 +1,49 @@
+<!--pages/self/index.wxml-->
+<view class='self-top'>
+  <view class='flex'>
+    <image src='../../img/icons/logo.png' alt='头像' class='self-img'></image>
+    <view class='self-flex'>
+      <text><text class='name'>张鹏</text> 业务小白</text>
+      <text>业务员：业务小白</text>
+    </view>
+  </view>
+  <view class='qrcode'>
+    <image src='../../img/icons/logo.png' alt='二维码'></image>
+    <text>我的邀请码</text>
+  </view>
+</view>
+<view class='self-con'>
+  <view class='rest-con border'>
+    <view class='rest-money'>
+      <text class='blue'><text class='money'>500</text>元</text>
+      <text>账户余额</text>
+    </view>
+    <view class='line'></view>
+    <view class='rest-money withrow'>
+      <image src='../../img/icons/self-money.png'></image>
+      <text>账户提现</text>
+    </view>
+  </view>
+  <view class='border flex-space info'>
+    <view class='flex'>
+      <image src='../../img/icons/self-info.png' class='icons' />
+      <text>消息</text>
+    </view>
+    <image src='../../img/icons/back-right.png' alt='箭头' class='back-right'></image>
+  </view>
+  <view class='border flex-space order-status'>
+    <view wx:for='{{orderStatus}}' wx:key='index' class='status-item'>
+      <image src='{{item.icon}}' alt='icon'></image>
+      <text>{{item.text}}</text>
+    </view>
+  </view>
+  <view class='border list-con'>
+    <view class='list-items' wx:for='{{list}}' wx:key='index'>
+      <view class='flex'>
+        <image src='{{item.icon}}' alt='icon' class='icon'></image>
+        <text>{{item.text}}</text>
+      </view>
+      <image src='../../img/icons/back-right.png' alt='箭头' class='back-right'></image>
+    </view>
+  </view>
+</view>
