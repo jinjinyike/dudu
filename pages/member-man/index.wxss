@@ -1,0 +1,69 @@
+/* pages/member-man/index.wxss */
+
+.money-con {
+  padding: 30rpx 0;
+  text-align: center;
+  color: #aaa;
+  font-size: 24rpx;
+}
+
+.blue {
+  margin-top: 20rpx;
+}
+
+.number {
+  font-size: 48rpx;
+}
+
+.money-his {
+  padding: 20rpx;
+  color: #646464;
+  font-size: 28rpx;
+}
+
+.his-con {
+  margin: 0rpx auto;
+  background: #fff7ec;
+  text-align: center;
+  font-size: 24rpx;
+  /* border: 1px solid #E0C8A8; */
+  border-bottom: none;
+  color: #999;
+}
+
+.his-tr {
+  display: flex;
+  height: 65rpx;
+  line-height: 65rpx;
+}
+
+.his-title {
+  background: #f9e3c5;
+  color: #fb7252;
+}
+
+.his-tr view {
+  width: 167.5rpx;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.line {
+  width: 1px;
+  background: #ccc;
+  height: 100%;
+}
+
+.bus-man {
+  width: 100rpx;
+  height: 38rpx;
+  background: rgba(89, 171, 234, 1);
+  border-radius: 8rpx;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  line-height: 38rpx;
+}

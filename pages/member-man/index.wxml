@@ -1,0 +1,31 @@
+<!--pages/member-man/index.wxml-->
+<view class='box flex flex-around'>
+  <view class='money-con'>
+    <view>我的会员人数：</view>
+    <view class='blue'>
+      <text class='number'>560</text>人</view>
+  </view>
+  <view class='line'></view>
+  <view class='money-con'>
+    <view>本月分润总额：</view>
+    <view class='blue'>
+      <text class='number'>560</text>元</view>
+  </view>
+
+</view>
+<view class='box money-his'>
+  <view class='his-con'>
+    <view class='his-title his-tr'>
+      <view>会员名称</view>
+      <view>当月支付总额</view>
+      <view>当月收款总额</view>
+      <view>商户管理</view>
+    </view>
+    <view class='his-tr'>
+      <view>时间</view>
+      <view>赚取方式</view>
+      <view>赚取分润</view>
+      <text class='bus-man'>管理</text>
+    </view>
+  </view>
+</view>

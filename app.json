@@ -1,5 +1,9 @@
 {
   "pages": [
+    "pages/rest-withraw/index",
+    "pages/become-menber/index",
+    "pages/member-man/index",
+    "pages/account-rest/index",
     "pages/evuluate/index",
     "pages/order/index",
     "pages/self-detail/index",
