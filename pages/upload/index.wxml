@@ -1,0 +1,8 @@
+<!--pages/upload/index.wxml-->
+<view class='upload'>
+  <view class='flex flex-pri'>
+    <image src='../../img/icons/logo.png' alt='touxiang' class='touxiang'></image>
+    <text>张鹏</text>
+    <text>嘟嘟小白</text>
+  </view>
+</view>

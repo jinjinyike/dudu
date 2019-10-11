@@ -1,7 +1,7 @@
 <!--pages/sub-order/index.wxml-->
 <view class='bgcon'>
   <view class='pro-cont self-pro'>
-    <image src='../../img/icon/logo.png' alt='touxiang'></image>
+    <image src='../../img/icons/logo.png' alt='touxiang'></image>
     <view>张鹏</view>
     <view>您当前的身份：嘟嘟小白</view>
     <view class='flex flex-center'>邀请码：

@@ -1,7 +1,13 @@
 {
   "pages": [
+    "pages/phone/index",
+    "pages/login/login",
+    "pages/upload/index",
+    "pages/dudu-intro/index",
+    "pages/sale-service/index",
+    "pages/invite-member/index",
     "pages/rest-withraw/index",
-    "pages/become-menber/index",
+    "pages/become-member/index",
     "pages/member-man/index",
     "pages/account-rest/index",
     "pages/evuluate/index",
@@ -13,8 +19,6 @@
     "pages/detail/index",
     "pages/face/index",
     "pages/mall/index",
-    "pages/phone/index",
-    "pages/login/login",
     "pages/index/index",
     "pages/logs/logs",
     "pages/home/index"

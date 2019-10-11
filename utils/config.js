@@ -2,15 +2,11 @@ const HOST = 'https://www.haixm.cn';
 
 module.exports = {
   HOST,
-  STORAGE: {
-    SWITCHBAR: 'TRUSTAPP_SWITCHBAR',
-    DATERANGE: 'TRUSTAPP_DATERANGE'
-  },
   API: {
-    login: `${HOST}/api/auth/login`,
-    getCode: `${HOST}/api/auth/sendMessage`,
-    regist: `${HOST}/api/auth/register`,
-    identityAdd: `${HOST}/api/about/identityAdd`, //身份认证
+    login: `${HOST}/api/Sign/login`,
+    getCode: `${HOST}/api/Sign/res_mas`,
+    regist: `${HOST}/api/Sign/regis`,
+    banners: `${HOST}/api/Sale/banners`, //首页轮播
     identity: `${HOST}/api/about/identity`, //身份查询
     businessAdd: `${HOST}/api/about/businessAdd`, //营业执照认证
     business: `${HOST}/api/about/business`, //营业查询

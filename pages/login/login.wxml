@@ -4,7 +4,7 @@
     <view class='logo'></view>
     <view class='btn-con'>
       <button class=''>微信授权登录</button>
-      <button>暂不登录</button>
+      <button bindtap='noLogin'>暂不登录</button>
     </view>
   </view>
   <view class='info'>已同意并阅读

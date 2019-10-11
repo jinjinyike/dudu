@@ -1,0 +1,11 @@
+<!--pages/invite-member/index.wxml-->
+<view class='invite-mem'>
+  <image src='../../img/icons/logo.png' alt='touxiang'></image>
+  <view class='f32'>张鹏</view>
+  <view class='f24'>普通会员</view>
+  <image src='../../img/icons/logo.png' alt='touxiang'></image>
+  <view class='f28'>微信扫一扫成为嘟嘟会员</view>
+  <text class='f20'>点击保存可分享到微信好友、朋友圈、微信群</text>
+  <button>保存二维码</button>
+</view>
+<view class='share'>分享赚钱规则</view>

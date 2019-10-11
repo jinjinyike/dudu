@@ -1,0 +1,32 @@
+/* pages/sale-service/index.wxss */
+
+.sale image {
+  width: 300rpx;
+  height: 300rpx;
+  display: block;
+  margin: 80rpx auto;
+}
+
+.sale button {
+  width: 400rpx;
+  height: 100rpx;
+  font-size: 32rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  border: none;
+  line-height: 100rpx;
+  background: #59abea;
+}
+
+.sale-list {
+  margin: 80rpx 20rpx;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 8px 0px rgba(221, 221, 221, 1);
+  border-radius: 20px;
+  padding: 40rpx 20rpx;
+  color: #646464;
+  font-size: 24rpx;
+}
+.sale-list view{
+  line-height: 40rpx;
+}

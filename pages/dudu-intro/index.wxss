@@ -1,0 +1,25 @@
+/* pages/dudu-intro/index.wxss */
+.dudu-intro{
+  padding: 0 40rpx; 
+}
+.dudu-intro image:nth-of-type(1){
+  margin:45rpx auto;
+  display: block;
+  width: 241rpx;
+  height: 41rpx;
+}
+.video{
+  width: 670rpx;
+  height: 360rpx;
+}
+.dudu-text{
+  font-size: 28rpx;
+  color: #646464;
+  margin: 50rpx 0;
+}
+.dudu-intro image:nth-of-type(2){
+  display: block;
+  width: 280rpx;
+  height: 280rpx;
+  margin: auto;
+}

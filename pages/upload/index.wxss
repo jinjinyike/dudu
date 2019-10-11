@@ -1,0 +1,22 @@
+/* pages/upload/index.wxss */
+page{
+  background: #fff;
+  padding: 40rpx;
+}
+.upload{
+  font-size: 28rpx;
+  color: #646464;
+}
+.flex-pri{
+  justify-content: flex-start;
+  margin-bottom: 40rpx;
+}
+.touxiang{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.flex-pri text:nth-of-type(1){
+  font-size: 32rpx;
+  margin: 0 35rpx;
+}

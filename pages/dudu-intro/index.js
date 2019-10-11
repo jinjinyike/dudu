@@ -1,10 +1,4 @@
-// pages/login/login.js
-const app = getApp();
-const request = require('../../utils/request');
-import {
-  API,
-  HOST
-} from '../../utils/config.js';
+// pages/dudu-intro/index.js
 Page({
 
   /**
@@ -20,11 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-  noLogin(){
-    wx.navigateTo({
-      url: '../phone/index',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

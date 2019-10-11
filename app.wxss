@@ -137,3 +137,12 @@ page{
   justify-content: space-between;
   align-items: center;
 }
+.f28{
+  font-size: 28rpx;
+}
+.f24{
+  font-size: 24rpx;
+}
+.f32{
+  font-size: 32rpx;
+}

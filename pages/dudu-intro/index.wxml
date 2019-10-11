@@ -1,0 +1,7 @@
+<!--pages/dudu-intro/index.wxml-->
+<view class='dudu-intro'>
+  <image src='../../img/icons/logo.png' alt='logo'></image>
+  <view class='video'></view>
+  <view class='dudu-text'>嘟嘟支付一款专为个人和企业服务的商品,让在线交易更快,更简单。一次对接,全渠道聚合,多场景支持。嘟嘟支付是与微信、支付宝等第三方支付合作的战略伙伴。通过渠道的优势集合</view>
+  <image src='../../img/icons/logo.png' alt='logo'></image>
+</view>
