@@ -1,4 +1,13 @@
 // pages/dudu-intro/index.js
+const app = getApp();
+const request = require('../../utils/request');
+import {
+  formatRichText
+} from '../../utils/util.js'
+import {
+  API,
+  HOST
+} from '../../utils/config.js';
 Page({
 
   /**
@@ -12,7 +21,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    request({
+      url: API.about,
+      method: 'POST',
+      success: res => {
+        this.setData({ con :formatRichText(res.data.content)})
+      }
+    })
   },
 
   /**

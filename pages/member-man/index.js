@@ -1,4 +1,10 @@
 // pages/member-man/index.js
+const app = getApp();
+const request = require('../../utils/request');
+import {
+  API,
+  HOST
+} from '../../utils/config.js';
 Page({
 
   /**
@@ -12,7 +18,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    request({
+      url: API.myTeam,
+      method: 'post',
+      success: res=> {
+        this.setData({msg:res.msg})
+      },
+      complete: function(res) {},
+    })
   },
 
   /**

@@ -1,30 +1,30 @@
 <!--pages/self/index.wxml-->
 <view class='self-top'>
   <view class='flex'>
-    <image src='../../img/icons/logo.png' alt='头像' class='self-img'></image>
+    <image src='{{HOST+obj.head_img}}' alt='头像' class='self-img' bindtap='goDetail'></image>
     <view class='self-flex'>
-      <text><text class='name'>张鹏</text> 业务小白</text>
-      <text>业务员：业务小白</text>
+      <text><text class='name'>{{obj.nickname}}</text> {{obj.lev_name}}</text>
+      <text>业务员：{{obj.intr_name}}</text>
     </view>
   </view>
-  <view class='qrcode'>
+  <view class='qrcode' bindtap='selfCode'>
     <image src='../../img/icons/logo.png' alt='二维码'></image>
-    <text>我的邀请码</text>
+    <text>{{obj.level==1?'成为推广员':'我的邀请码'}}</text>
   </view>
 </view>
 <view class='self-con'>
   <view class='rest-con border'>
-    <view class='rest-money'>
-      <text class='blue'><text class='money'>500</text>元</text>
+    <view class='rest-money' bindtap='goRestAccount'>
+      <text class='blue'><text class='money'>{{obj.now_money}}</text>元</text>
       <text>账户余额</text>
     </view>
     <view class='line'></view>
-    <view class='rest-money withrow'>
+    <view class='rest-money withrow' bindtap='goWithrow'>
       <image src='../../img/icons/self-money.png'></image>
       <text>账户提现</text>
     </view>
   </view>
-  <view class='border flex-space info'>
+  <view class='border flex-space info' bindtap='goMsgList'>
     <view class='flex'>
       <image src='../../img/icons/self-info.png' class='icons' />
       <text>消息</text>
@@ -32,18 +32,21 @@
     <image src='../../img/icons/back-right.png' alt='箭头' class='back-right'></image>
   </view>
   <view class='border flex-space order-status'>
-    <view wx:for='{{orderStatus}}' wx:key='index' class='status-item'>
+    <view wx:for='{{orderStatus}}' s class='status-item' data-type='{{index+1}}' bindtap='goOrder'>
       <image src='{{item.icon}}' alt='icon'></image>
       <text>{{item.text}}</text>
     </view>
   </view>
+
   <view class='border list-con'>
-    <view class='list-items' wx:for='{{list}}' wx:key='index'>
-      <view class='flex'>
-        <image src='{{item.icon}}' alt='icon' class='icon'></image>
-        <text>{{item.text}}</text>
+    <block wx:for='{{list}}'>
+      <view class='list-items' wx:key='index'  wx:key='index' bindtap='goList' data-index='{{index}}'>
+        <view class='flex'>
+          <image src='{{item.icon}}' alt='icon' class='icon'></image>
+          <text>{{item.text}}</text>
+        </view>
+        <image src='../../img/icons/back-right.png' alt='箭头' class='back-right'></image>
       </view>
-      <image src='../../img/icons/back-right.png' alt='箭头' class='back-right'></image>
-    </view>
+    </block>
   </view>
 </view>

@@ -2,7 +2,7 @@
 <view class='box money-con'>
   <view>账户余额：</view>
   <view class='blue'>
-    <text class='number'>560</text>元</view>
+    <text class='number'>{{money}}</text>元</view>
 </view>
 <view class='box money-his'>
   <view>余额记录:</view>
@@ -12,10 +12,10 @@
       <view>赚取方式</view>
       <view>赚取分润</view>
     </view>
-    <view class='his-tr'>
-      <view>时间</view>
-      <view>赚取方式</view>
-      <view>赚取分润</view>
+    <view class='his-tr' wx:for='{{list}}' wx:key='index'>
+      <view>{{item.add_time}}</view>
+      <view>{{item.desc}}</view>
+      <view>{{item.money}}</view>
     </view>
   </view>
 </view>

@@ -13,7 +13,8 @@ Page({
   data: {
     phone: '',
     btntext: '获取验证码',
-    verify: '',
+    vcode: '',
+    intr_no:''
   },
 
   /**
@@ -47,6 +48,7 @@ Page({
       method: 'POST',
       loading: false,
       success: res => {
+        // this.setData({ vcode:res.msg.code})
         if (!res.code) {
           let _this = this;
           let coden = 60 // 定义60秒的倒计时
@@ -75,7 +77,7 @@ Page({
   submit() {
     const {
       phone,
-      verify
+      vcode, intr_no
     } = this.data
     if (!(/^1[3456789]\d{9}$/.test(phone))) {
       return wx.showToast({
@@ -83,36 +85,45 @@ Page({
         icon: 'none'
       })
     }
-    if ((!verify || verify.length !== 6)) {
+    // verify.length !== 6
+    if ((!vcode )) {
       return wx.showToast({
         title: '请输入验证码',
         icon: 'none'
       })
     }
+    if ((!intr_no)) {
+      return wx.showToast({
+        title: '请输入推荐码',
+        icon: 'none'
+      })
+    }
     let obj = {
       phone,
-      verify
+      vcode,
+      intr_no,
     }
     request({
       url: API.regist,
       data: obj,
       method: 'POST',
       success: res => {
-        if (res.code !== 0) {
+        if (res.code !== 2000) {
           return wx.showToast({
             title: res.msg,
             icon: 'none'
           })
         }
         //注册——身份验证
-        app.globalData.userInfo = res.data;
-        wx.setStorage({
-          key: 'userInfo',
-          data: JSON.stringify(res.data),
-        })
-        wx.navigateTo({
+        // app.globalData.userInfo = res.data;
+        // wx.setStorage({
+        //   key: 'userInfo',
+        //   data: JSON.stringify(res.data),
+        // })
+        wx.switchTab({
           url: '../face/index',
         })
+        
       }
     })
   },

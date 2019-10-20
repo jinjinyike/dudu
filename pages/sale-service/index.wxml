@@ -1,10 +1,12 @@
 <!--pages/sale-service/index.wxml-->
 <view class='sale'>
-  <image src='../../img/icons/logo.png' alt='logo'></image>
-  <button>点击拨打服务热线</button>
+  <view class='logo'>
+      <image src='../../img/icons/logo.png' alt='logo'></image>
+    </view>
+  <button bindtap='callphone'>点击拨打服务热线</button>
   <view class='sale-list'>
-    <view>咨询热线：18530073610</view>
-    <view>客服热线：0372-292999</view>
-    <view>公司地址：河南省安阳市高新区彰德路南段路西华豫纺织厂工业园区商住3号楼1单元</view>
+    <view>咨询热线：{{msg.zxrx}}</view>
+    <view>客服热线：{{msg.kfrx}}</view>
+    <view>公司地址：{{msg.addres}}</view>
   </view>
 </view>

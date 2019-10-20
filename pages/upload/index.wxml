@@ -1,8 +1,64 @@
 <!--pages/upload/index.wxml-->
 <view class='upload'>
   <view class='flex flex-pri'>
-    <image src='../../img/icons/logo.png' alt='touxiang' class='touxiang'></image>
-    <text>张鹏</text>
-    <text>嘟嘟小白</text>
+    <image src='{{obj.head_img}}' alt='头像' class='touxiang'></image>
+    <text>{{obj.nickname}}</text>
+    <text>{{obj.lev_name}}</text>
+  </view>
+  <view>1、法人身份证正反面</view>
+  <view class='flex'>
+    <view class='flex flex-row'>
+      <image src='{{obj.lead_imgr?obj.lead_imgr:"../../img/icons/up-1.png"}}' class='card-img' alt='' data-key='lead_imgr' bindtap='uploadImg'></image>
+      <text class='blue'>点击上传身份证正面</text>
+    </view>
+    <view class='flex flex-row'>
+      <image src="{{obj.lead_imgl?obj.lead_imgl:'../../img/icons/up-1.png'}}" bindtap='uploadImg' data-key='lead_imgl' class='card-img' alt=''></image>
+      <text class='blue'>点击上传身份证反面</text>
+    </view>
+  </view>
+  <view>2、法人营业执照照片</view>
+  <view class='flex flex-row'>
+    <image src="{{obj.cert_img?obj.cert_img:'../../img/icons/up-2.png'}}" bindtap='uploadImg' data-key='cert_img' class='card-img' alt=''></image>
+    <text class='blue'>点击上传营业执照照片</text>
+  </view>
+  <view>3、特殊行业资质照片（餐饮、烟酒、等）</view>
+  <view class='flex flex-row'>
+    <image src="{{obj.cert_imgs?obj.cert_imgs:'../../img/icons/up-3.png'}}" class='card-img' bindtap='uploadImg' data-key='cert_imgs' alt=''></image>
+    <text class='blue'>点击上传资质照片</text>
+  </view>
+  <view>4、其他照片（店铺门头、收银台、内部经营照片）</view>
+  <view class='flex flex-row'>
+    <image src="{{obj.other_imgs?obj.other_imgs:'../../img/icons/up-4.png'}}" class='card-img add' bindtap='uploadImg' data-key='other_imgs' alt=''></image>
+  </view>
+  <view>
+    <radio-group class="radio-group" bindchange="radioChange">
+      <radio value='1' checked='true'>个体工商户</radio>
+      <radio value='2'>企业</radio>
+    </radio-group>
+  </view>
+  <block wx:if='{{obj.type==2}}'>
+    <view>5、开户名称（对公账户需要户许可证）</view>
+    <!-- <input placeholder='请输入开户名称'></input> -->
+    <image src="{{obj.open_img?obj.open_img:'../../img/icons/up-4.png'}}"  bindtap='uploadImg' data-key='open_img' class='card-img add ml30' alt=''></image>
+  </block>
+
+  <block wx:if='{{obj.type==1}}'>
+    <view >5、开户银行卡号（个体工商户需要法人的银行卡）</view>
+    <!-- <input placeholder='请输入开户银行卡号'></input> -->
+    <image src="{{obj.frbank_img?obj.frbank_img:'../../img/icons/up-4.png'}}"  bindtap='uploadImg' data-key='frbank_img' class='card-img add ml30' alt=''></image>
+  </block>
+
+  <view>6、联系人电话</view>
+  <input placeholder='请输入联系人电话' data-key='tel' bindinput='changetext' type='num' value='{{obj.tel}}'></input>
+  <view>7、联系人邮箱</view>
+  <input placeholder='请输入联系人邮箱' data-key='email' bindinput='changetext' value='{{obj.email}}'></input>
+  <view>8、商家简称</view>
+  <input placeholder='请输入商家简称' data-key='nickname' bindinput='changetext' value='{{obj.nickname}}'></input>
+  <view class='flex red-tip'>
+    <text>上传身份证要求：</text>
+    <text>1、必须为本人的证件，否则认证失败</text>
+    <text>2、证件需在有效限内，否则认证失败</text>
+    <text>3、证件照片要清晰，照片格式为jpeg、jpg、png</text>
   </view>
 </view>
+<button class='up-btn' bindtap='save'>提交认证</button>

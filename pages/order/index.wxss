@@ -1,4 +1,6 @@
 /* pages/order/index.wxss */
 
-
+.order-money button{
+  margin: 0;
+}
 

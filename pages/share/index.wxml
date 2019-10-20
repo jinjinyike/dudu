@@ -2,18 +2,18 @@
 <!-- <text>pages/share/index.wxml</text> -->
 <view class='con'>
   <view class='pro-intd'>
-    <image src='../../img/icons/logo.png' alt='商品'></image>
+    <image src='{{HOST+obj.img}}' alt='商品'></image>
     <view class='pro-sell'>
-      <text>人脸支付智慧零售新体验
+      <text>{{obj.name}}
 </text>
-      <text>货号：6748</text>
-      <text>单价：6748</text>
-      <text>分享次数：6748</text>
+      <text>货号：{{obj.id}}</text>
+      <text>单价：{{obj.sale_money}}</text>
+      <text>分享次数：{{obj.sale_num}}</text>
     </view>
   </view>
   <view class='share-money'>
     <view>本次分享你可赚</view>
-    <view class='nub'>100元</view>
+    <view class='nub'>{{obj.rake_money}}元</view>
   </view>
   <image class='share-img' src='../../img/icons/logo.png' alt='share'>
   </image>

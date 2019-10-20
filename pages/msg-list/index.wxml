@@ -1,0 +1,16 @@
+<!--pages/msg-list/index.wxml-->
+<view class='msg-con'>
+  <view class='msg-list' wx:for='{{list}}'>
+    <view class='flex msg-title' bindtap='goMsgList'>
+      <image src='../../img/icons/self-info.png' class='icons' />
+      <text>{{item.name}}</text>
+    </view>
+    <view wx:if='{{item.news.length>1}}' class='news-con'>
+      <view wx:for='{{item.news}}' wx:key='index' class='status-item' bindtap='goMsgDetail' data-id='{{item.id}}'>
+        <view>{{item.title}}</view>
+        <text>{{item.add_time}}</text>
+      </view>
+    </view>
+    <!-- <image src='../../img/icons/back-right.png' alt='箭头' class='back-right'></image> -->
+  </view>
+</view>

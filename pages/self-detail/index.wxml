@@ -2,30 +2,20 @@
 <view class='self-detail'>
   <view class='self-items'>
     <text>头像</text>
-    <image src='../../img/icon/logo.png' alt='touxiang'></image>
+    <image src='{{msg.head_img}}' alt='touxiang' bindtap='changeImg'></image>
   </view>
   <view class='self-items'>
     <text>性别</text>
-    <radio-group>
-      <radio checked='{{true}}'>男</radio>
-      <radio>女</radio>
+    <radio-group wx:if='{{edit}}' bindchange='changeSex'>
+      <radio checked='{{msg.sex==1}}' value='1'>男</radio>
+      <radio checked='{{msg.sex==2}}' value='2'>女</radio>
     </radio-group>
-    <image src='../../img/icon/logo.png' alt='touxiang'></image>
+    <text wx:else>{{msg.sex==1?'男':'女'}}</text>
   </view>
-  <view class='self-items'>
-    <text>年龄</text>
-    <text>36</text>
-  </view>
-  <view class='self-items'>
-    <text>收货人姓名</text>
-    <text>36</text>
-  </view>
-  <view class='self-items'>
-    <text>收货人电话</text>
-    <text>36</text>
-  </view>
-  <view class='self-items'>
-    <text>收货人地址</text>
-    <text>36</text>
+  <view class='self-items' wx:for='{{inputList}}'>
+    <text>{{item.label}}</text>
+    <input type='num' wx:if='{{edit}}' value='{{msg[item.key]}}' :key='{{item.key}}' data-key='{{item.key}}' maxlength='{{item.maxLength}}' bindinput='changeInput'></input>
+    <text wx:else>{{msg[item.key]}}</text>
   </view>
 </view>
+<button class='edit' bindtap='edit'>{{edit?'修改':'编辑'}}</button>

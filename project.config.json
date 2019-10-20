@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -13,7 +13,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.7.7",
-	"appid": "wxfc9b32c29053eb30",
+	"appid": "wxad204735bedd0509",
 	"projectname": "dudu",
 	"debugOptions": {
 		"hidedInDevtools": []

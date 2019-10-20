@@ -1,9 +1,11 @@
 <!--pages/login/login.wxml-->
 <view>
   <view>
-    <view class='logo'></view>
+    <view class='logo'>
+      <image src='../../img/icons/logo.png' alt='logo'></image>
+    </view>
     <view class='btn-con'>
-      <button class=''>微信授权登录</button>
+      <button class='' bindtap='wxlogo'>微信授权登录</button>
       <button bindtap='noLogin'>暂不登录</button>
     </view>
   </view>

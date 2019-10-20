@@ -22,7 +22,7 @@
 }
 
 .number {
-  width: 100rpx;
+  /* width: 100rpx;
   height: 28rpx;
   display: flex;
   align-items: center;
@@ -30,15 +30,19 @@
   border-radius: 14rpx;
   color: #FFF;
   padding: 0 10rpx;
-  background: linear-gradient(90deg, rgba(251, 93, 63, 1), rgba(241, 10, 26, 1));
+  background: linear-gradient(90deg, rgba(251, 93, 63, 1), rgba(241, 10, 26, 1)); */
 }
 
-.number image {
-  height: 25rpx;
+.number  {
+  width: 100rpx;
+  height: 28rpx;
 }
 .hot-text{
   font-size: 24rpx;
   color: #323232;
+}
+.hot-text image{
+  margin-bottom: -4rpx;
 }
 .price{
   display: flex;

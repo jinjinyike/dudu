@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "嘟嘟商城",
-  "usingComponents": {}
+  "usingComponents": {},
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true
 }

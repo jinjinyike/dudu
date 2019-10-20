@@ -1,17 +1,18 @@
 <!--pages/detail/index.wxml-->
 <view class='pro-con'>
-  <image src='../../img/icons/logo.png' alt='商品'></image>
+  <image src='{{HOST+obj.imgs}}' alt='商品'></image>
   <view class='p20'>
     <view class='item-text'>
-      <text>【人脸支付智慧零售新体验】</text>无需手机，提升效率，更加便捷，可对接ERP
+      <text wx:if='{{obj.label}}'>【{{obj.label}}】</text>{{obj.name}}
     </view>
     <view class='price-con/'>
       <view>￥
-        <text>998</text>
+        <text>{{obj.sale_money}}</text>
       </view>
-      <text class='people'>33人已订购</text>
+      <text class='people'>{{obj.sale_num}}人已订购</text>
       <view class='sell'>
         <text>我要订购</text>
+        <input type='number' value="{{num}}" bindinput="changeNum" />
         <text>台</text>
       </view>
     </view>
@@ -19,10 +20,14 @@
 </view>
 <view class='detail p20'>
   <view class='pro-title'>商品详情</view>
-  <view class='pro-info'>人脸支付是使用生物识别技术在支付阶段通过“扫脸”来取代传统密码。人脸支付的使用，优化了支付流程，有效提升用户日常购物消费体验，提高了商家的交易效率，带动了零售业的发展。</view>
-  <image src='../../img/icons/logo.png' alt='商品'></image>
+  <view class='pro-info'>
+    <rich-text nodes="{{obj.detail}}" class='rich-html'></rich-text>
+    <!-- {{obj.detail}} -->
+    <!-- 人脸支付是使用生物识别技术在支付阶段通过“扫脸”来取代传统密码。人脸支付的使用，优化了支付流程，有效提升用户日常购物消费体验，提高了商家的交易效率，带动了零售业的发展。 -->
+  </view>
+  <!-- <image src='../../img/icons/logo.png' alt='商品'></image> -->
 </view>
 <view class='fix-btn'>
-  <button>立即订购</button>
-  <button>分享赚钱</button>
+  <button bindtap='goorder'>立即订购</button>
+  <button bindtap='goshare' wx:if='{{obj.u_level!=1}}'>分享赚钱</button>
 </view>

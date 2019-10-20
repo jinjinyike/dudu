@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "账户余额",
-  "usingComponents": {}
+  "usingComponents": {},
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true
 }

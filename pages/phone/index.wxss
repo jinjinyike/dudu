@@ -1,5 +1,7 @@
 /* pages/phone/index.wxss */
-
+page{
+  background: #fff;
+}
 .input-con {
   margin: 56rpx auto;
   padding: 0 40rpx;
@@ -29,6 +31,7 @@
   font-size: 24rpx;
   background: #59abea;
   text-align: center;
+  z-index: 2;
 }
 .submit {
   width: 400rpx;

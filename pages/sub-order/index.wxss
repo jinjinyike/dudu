@@ -39,7 +39,7 @@
   font-size: 28rpx;
 }
 .wx image{
-  width: 60rpx;
+  width: 55rpx;
   height: 53rpx;
   margin-right: 20rpx;
 }

@@ -6,7 +6,8 @@
   border-radius: 20px;
   margin: 20rpx;
 }
-.self-items{
+
+.self-items {
   height: 90rpx;
   display: flex;
   justify-content: space-between;
@@ -15,12 +16,26 @@
   border-bottom: 1px solid #eee;
   font-size: 28rpx;
   color: #323232;
+  text-align: right;
 }
-.self-items image{
+
+.self-items image {
   width: 58rpx;
   height: 58rpx;
   border-radius: 50%;
 }
-.self-items text:nth-of-type(2){
+
+.self-items text:nth-of-type(2) {
   color: #646464;
+}
+
+.edit {
+  margin: 0 20rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: rgba(89, 171, 234, 1);
+  border-radius: 50px;
+  color:#fff;
+  border: none;
+  font-size: 28rpx;
 }

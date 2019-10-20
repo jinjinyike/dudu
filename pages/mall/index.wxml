@@ -1,77 +1,73 @@
 <!--pages/mall/index.wxml-->
 <view class='p20'>
   <view class='select-title blue'>
-    <image src='../../img/icons/logo.png' alt='精选活动'></image>
+    <image src='../../img/icons/mall-hot.png' alt='精选活动'></image>
     <text>商场爆款</text>
   </view>
   <view class='hot-con'>
-    <view class='hot-one'>
-      <image src='../../img/icons/logo.png' alt='图片' class='one-img'></image>
+    <view class='hot-one' wx:if='{{hotList[0].id}}' data-id='{{hotList[0].id}}' bindtap='buy'>
+      <image src='{{HOST+hotList[0].img}}' alt='图片' class='one-img'></image>
       <view class='hot-text'>
-        <view class='number'>
-          <image src='../../img/icons/logo.png' alt='图片'></image>
-          <text>NO.1</text>
+        <view>
+          <image class='number' src='../../img/icons/mall-1.png' alt='图片'></image>
+          <!-- <text>NO.1</text> -->
         </view>
-        <text>【人脸支付智慧零售新体验】无需手机</text>
+        <text>{{hotList[0].name}}</text>
       </view>
       <view class='price'>
-        <text>¥998</text>
+        <text>¥{{hotList[0].sale_money}}</text>
         <text>去抢购 >></text>
       </view>
     </view>
-    <view class='hot-other'>
+    <view class='hot-other' wx:if='{{hotList[1].id}}' data-id='{{hotList[1].id}}' bindtap='buy'>
       <view class='hot-one hot-two'>
         <view class='flex'>
-          <image src='../../img/icons/logo.png' alt='图片' class='two-img'></image>
+          <image src='{{HOST+hotList[1].img}}' alt='图片' class='two-img'></image>
           <view class='hot-text'>
-            <view class='number'>
-              <image src='../../img/icons/logo.png' alt='图片'></image>
-              <text>NO.2</text>
-            </view>
-            <text>【人脸支付智慧零售新体验】无需手机，提升效率，</text>
+            <!-- <view > -->
+            <image class='number' src='../../img/icons/mall-2.png' alt='图片'></image>
+            <!-- <text>NO.2</text> -->
+            <!-- </view> -->
+            <text>{{hotList[1].name}}</text>
           </view>
         </view>
 
         <view class='price'>
-          <text>¥998</text>
+          <text>¥{{hotList[1].sale_money}}</text>
           <text>去抢购 >></text>
         </view>
       </view>
-      <view class='hot-one hot-two hot-three'>
+      <view class='hot-one hot-two hot-three' wx:if='{{hotList[2].id}}' data-id='{{hotList[2].id}}' bindtap='buy'>
         <view class='flex'>
-          <image src='../../img/icons/logo.png' alt='图片' class='two-img'></image>
+          <image src='{{HOST+hotList[2].img}}' alt='图片' class='two-img'></image>
           <view class='hot-text'>
-            <view class='number'>
-              <image src='../../img/icons/logo.png' alt='图片'></image>
-              <text>NO.2</text>
-            </view>
-            <text>【人脸支付智慧零售新体验】无需手机，提升效率，</text>
+            <image class='number' src='../../img/icons/mall-3.png' alt='图片'></image>
+            <text>{{hotList[3].name}}</text>
           </view>
         </view>
-
         <view class='price'>
-          <text>¥998</text>
+          <text>¥{{hotList[2].sale_money}}</text>
           <text>去抢购 >></text>
         </view>
       </view>
     </view>
   </view>
   <view class='select-title'>
-    <image src='../../img/icons/logo.png' alt='精选活动'></image>
+    <image src='../../img/icons/great.png' alt='精选活动'></image>
     <text>精选活动</text>
   </view>
   <view class='list-con'>
-    <view class='list-item' wx:for='list' wx:key='index'>
-      <image src='../../img/icons/logo.png' alt='图片'></image>
+    <view class='list-item' wx:for='{{list}}' wx:key='index'>
+      <image src='{{HOST+item.img}}' alt='图片'></image>
       <view class='p20'>
         <view class='item-text'>
-          <text>【人脸支付智慧零售新体验】</text>无需手机，提升效率，更加便捷，可对接ERP
+          <text wx:if="{{item.label}}">【{{item.label}}】</text>{{item.name}}
         </view>
         <view class='price-con'>
           <view>￥
-            <text>998</text>
+            <text>{{item.sale_money}}</text>
           </view>
-          <view class='buy'>立即订购</view>
+          <view class='buy' bindtap='buy' data-id='{{item.id}}'>立即订购</view>
         </view>
       </view>
 

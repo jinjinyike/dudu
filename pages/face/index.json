@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "嘟嘟刷脸",
-  "usingComponents": {}
+  "usingComponents": {},
+  "onReachBottomDistance": 200,
+  "enablePullDownRefresh": true
 }

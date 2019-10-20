@@ -25,9 +25,13 @@
 .sell text {
   font-size: 28rpx;
 }
-
+.sell input{
+  border: 1px solid #ccc;
+  width: 50px;
+  margin: 0 5px;
+}
 .detail {
-  margin: 20rpx auto;
+  margin: 20rpx auto 120rpx;
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 8px 0px rgba(221, 221, 221, 1);
   text-align: center;
@@ -45,7 +49,9 @@
   font-size: 24rpx;
   text-align: left;
 }
-
+.rich-html img{
+  max-width: 335rpx;
+}
 .detail image {
   width: 280rpx;
   height: 280rpx;
@@ -61,6 +67,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #fff;
+  z-index: 100;
 }
 
 .fix-btn button {

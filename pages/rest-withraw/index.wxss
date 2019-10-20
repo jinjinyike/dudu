@@ -18,10 +18,10 @@
   font-size: 24rpx;
 }
 
-.blue {
+/* .blue {
   color: #fa2a41;
   margin-top: 20rpx;
-}
+} */
 
 .number {
   font-size: 48rpx;
@@ -75,6 +75,7 @@
   font-size: 24rpx;
   color: #999;
 }
+
 .intro text:nth-of-type(1){
   margin-right: 50rpx;
 }

@@ -43,7 +43,7 @@
 }
 
 .his-tr view {
-  width: 167.5rpx;
+  width: 223rpx;
 }
 
 .flex-around {

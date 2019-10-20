@@ -1,40 +1,34 @@
 <!--pages/face/index.wxml-->
 <swiper indicator-dots='true' indicator-active-color='#FF0000' autoplay='true'>
-  <swiper-item wx:for="swiperList" wx:key='index'>
-    <image src='../../img/icons/logo.png'></image>
+  <swiper-item wx:for="{{swiperList}}" wx:key='index'>
+    <image src='{{HOST+item.img}}'></image>
   </swiper-item>
 </swiper>
 <view class='con'>
+  <!-- flex tab -->
   <view class='intro'>
-    <view class='intro-item'>
-      <image src='../../img/icons/logo.png' alt='图片'></image>
-      <text>商城认证</text>
-    </view>
-    <view class='intro-item'>
-      <image src='../../img/icons/logo.png' alt='图片'></image>
-      <text>嘟嘟介绍</text>
-    </view>
-    <view class='intro-item'>
-      <image src='../../img/icons/logo.png' alt='图片'></image>
-      <text>分享赚钱</text>
+    <view class='intro-item' wx:for='{{flexList}}' wx:key='index' data-path='{{item.path}}' bindtap='facegoto'>
+      <image src='{{item.icon}}' alt='图片'></image>
+      <text>{{item.name}}</text>
     </view>
   </view>
+  <!-- 精选活动 -->
   <view class='select-title'>
-    <image src='../../img/icons/logo.png' alt='精选活动'></image>
+    <image src='../../img/icons/great.png' alt='精选活动'></image>
     <text>精选活动</text>
   </view>
   <view class='list-con'>
-    <view class='list-item' wx:for='list' wx:key='index'>
-      <image src='../../img/icons/logo.png' alt='图片'></image>
+    <view class='list-item' wx:for='{{list}}' wx:key='index' data-id='{{item.id}}' bindtap='detail'>
+      <image src='{{HOST+item.img}}' alt='图片'></image>
       <view class='p20'>
         <view class='item-text'>
-          <text>【人脸支付智慧零售新体验】</text>无需手机，提升效率，更加便捷，可对接ERP
+          <text wx:if='{{item.label}}'>【{{item.label}}】</text>{{item.name}}
         </view>
         <view class='price-con/'>
           <view>￥
-            <text>998</text>
+            <text>{{item.sale_money}}</text>
           </view>
-          <view class='buy'>立即订购</view>
+          <view class='buy' data-id='{{item.id}}' bindtap='buy'>立即订购</view>
         </view>
       </view>
 

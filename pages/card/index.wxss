@@ -1,0 +1,30 @@
+/* pages/card/index.wxss */
+.card{
+  padding: 20rpx 0rpx;
+  background: #fff;
+  margin: 20rpx;
+  border-radius: 30rpx;
+  box-shadow: 0px 4px 8px 0px rgba(221, 221, 221, 1);
+  color: #323232;
+  font-size: 28rpx;
+}
+.flex{
+  height: 90rpx;
+  padding: 0 20px;
+  /* margin-bottom: 10px; */
+  border-bottom: 1px solid #EEEEEE;
+}
+.card input{
+  color: #646464;
+}
+.card .save-btn{
+  display: block;
+  margin: 54rpx auto 10rpx;
+  /* width: 400rpx; */
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background: #59ABEA;
+  border-radius: 50rpx;
+}

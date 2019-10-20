@@ -3,17 +3,20 @@
   <view class='money-con'>
     <view>账户余额：</view>
     <view class='blue'>
-      <text class='number'>560</text>
+      <text class='number'>{{money}}</text>
     </view>
   </view>
   <view class='bg'></view>
   <view class='withraw-con'>
+  <view class='flex'>
     <view>提现到微信账户</view>
-    <view class='flex flex-center'>余额提现：
-      <input />
+    <view class='blue' bindtap='editCard'>修改提现银行卡</view>
     </view>
-    <view class='rest-text'>最低可提现：300元</view>
-    <button>马上提现</button>
+    <view class='flex flex-center'>余额提现：
+      <input type='num' bindinput='changeMoney'/>
+    </view>
+    <view class='rest-text'>最低可提现：{{money}}元</view>
+    <button bindtap='withdraw'>马上提现</button>
   </view>
 </view>
 <view class='intro'>

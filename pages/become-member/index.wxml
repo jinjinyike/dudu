@@ -1,19 +1,19 @@
 <!--pages/sub-order/index.wxml-->
 <view class='bgcon'>
   <view class='pro-cont self-pro'>
-    <image src='../../img/icons/logo.png' alt='touxiang'></image>
-    <view>张鹏</view>
-    <view>您当前的身份：嘟嘟小白</view>
+    <image src='{{HOST+user.head_img}}' alt='touxiang'></image>
+    <view>{{user.nickname}}</view>
+    <view>您当前的身份：{{user.lev_name}}</view>
     <view class='flex flex-center'>邀请码：
-      <input /> </view>
-    <view class='blue'>你需要缴纳管理费：500元</view>
+      <input bindtap='changeCode'/> </view>
+    <view class='blue'>你需要缴纳管理费：{{msg.money}}元</view>
   </view>
   <view class='bg'></view>
   <view class='.pro-cont wx'>
-    <image src='../../img/icons/logo.png' alt='微信'></image>
+    <image src='../../img/icons/weixin.png' alt='微信'></image>
     <text>微信支付</text>
   </view>
 </view>
 <view class='pay'>
-  <button>提交支付</button>
+  <button bindtap='submit'>提交支付</button>
 </view>

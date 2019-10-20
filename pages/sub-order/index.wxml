@@ -2,29 +2,43 @@
 <view class='bgcon'>
   <view class='pro-cont'>
     <view class='pro-intd'>
-      <image src='../../img/icons/logo.png' alt='商品'></image>
+      <image src='{{msg.good.img}}' alt='商品'></image>
       <view class='pro-sell'>
-        <text>人脸支付智慧零售新体验
+        <text>{{msg.good.name}}
 </text>
-        <text>1台</text>
-        <text>¥6748</text>
+        <text>{{msg.good.num}}台</text>
+        <text>¥{{msg.good.sale_money}}</text>
       </view>
     </view>
     <view class='order-info'>
-      <view>业务员：赵正明</view>
-      <view>收货人：赵正明</view>
-      <view>手机号：赵正明</view>
-      <view>订单编号：赵正明</view>
-      <view>收货地址：赵正明</view>
+      <view>
+        <text>业务员：</text>
+        <text>{{msg.disname}}</text>
+      </view>
+      <view class='order-list'>
+        <text>收货人：</text>
+        <input wx:if='{{order}}' value='{{user.nickname}}' class="order-input" placeholder="业务员" bindinput="bindKeyInput" data-key='nickname' maxlength='15' />
+        <text wx:else>{{user.nickname}}</text>
+      </view>
+      <view class='order-list'>
+        <text>手机号：</text>
+        <input wx:if='{{order}}' value='{{user.tel}}' class="order-input" placeholder="业务员" bindinput="bindKeyInput" data-key='tel' type='number' maxlength='11' />
+        <text wx:else>{{user.tel}}</text>
+      </view>
+      <view class='order-list'>
+        <text>收货地址：</text>
+        <input wx:if='{{order}}' value='{{user.address}}' class="order-input" placeholder="业务员" bindinput="bindKeyInput" data-key='address' maxlength='20' />
+        <text wx:else>{{user.address}}</text>
+      </view>
     </view>
-    <view class='order-money'>实付款：¥868</view>
+    <view class='order-money'>实付款：¥{{msg.money_sum}}</view>
   </view>
   <view class='bg'></view>
   <view class='.pro-cont wx'>
-    <image src='../../img/icons/logo.png' alt='微信'></image>
+    <image src='../../img/icons/weixin.png' alt='微信'></image>
     <text>微信支付</text>
   </view>
 </view>
-<view class='pay'>
-  <button>立即支付</button>
+<view class='pay' bindtap='submitOrder'>
+  <button>立即{{order?'下单':'支付'}}</button>
 </view>

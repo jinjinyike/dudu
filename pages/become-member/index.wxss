@@ -77,6 +77,6 @@
 
 .wx image {
   width: 60rpx;
-  height: 53rpx;
+  height: 60rpx;
   margin-right: 20rpx;
 }

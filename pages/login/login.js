@@ -20,9 +20,39 @@ Page({
   onLoad: function (options) {
 
   },
+  wxlogo(){
+    wx.login({
+      success(res) {
+        console.log(res)
+        request({
+          url: API.login,
+          data: {code:res.code},
+          method: 'post',
+          success: res=> {
+            app.globalData.wx=res;
+            wx.setStorageSync('wx', res);
+            if(res.code==4001){
+              wx.navigateTo({
+                url:'../phone/index'
+              })
+            }else{
+              wx.switchTab({
+                url: '../face/index',
+              })
+            }
+          },
+          fail: function(res) {},
+          complete: function(res) {},
+        })
+      }
+    })
+  },
   noLogin(){
-    wx.navigateTo({
-      url: '../phone/index',
+    // wx.navigateTo({
+    //   url: '../phone/index',
+    // })
+    wx.switchTab({
+      url: '../face/index',
     })
   },
   /**

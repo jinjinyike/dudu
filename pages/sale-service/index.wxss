@@ -1,12 +1,19 @@
 /* pages/sale-service/index.wxss */
 
-.sale image {
+.logo {
+  margin: 100rpx auto 100rpx;
   width: 300rpx;
   height: 300rpx;
-  display: block;
-  margin: 80rpx auto;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 8rpx 8rpx 0px rgba(100, 100, 100, 0.2);
+  border-radius: 50%;
+  text-align: center;
+  line-height: 300rpx;
 }
-
+.logo image{
+  width: 241rpx;
+  height: 41rpx;
+}
 .sale button {
   width: 400rpx;
   height: 100rpx;

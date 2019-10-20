@@ -1,22 +1,96 @@
 /* pages/upload/index.wxss */
-page{
+
+page {
   background: #fff;
-  padding: 40rpx;
 }
-.upload{
+
+.upload {
   font-size: 28rpx;
   color: #646464;
+  padding: 40rpx;
 }
-.flex-pri{
+
+.flex {
+  justify-content: flex-start;
+}
+
+.flex-pri {
   justify-content: flex-start;
   margin-bottom: 40rpx;
 }
-.touxiang{
+
+.touxiang {
   width: 90rpx;
   height: 90rpx;
   border-radius: 50%;
 }
-.flex-pri text:nth-of-type(1){
+
+.flex-pri text:nth-of-type(1) {
   font-size: 32rpx;
   margin: 0 35rpx;
+}
+
+.card-img {
+  width: 276rpx;
+  height: 180rpx;
+  margin: 40rpx 20rpx 10rpx 0rpx;
+}
+
+.add {
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.flex-row {
+  flex-direction: column;
+  margin-left: 40rpx;
+  align-items: flex-start;
+}
+
+.blue {
+  font-size: 24rpx;
+  margin-bottom: 35rpx;
+}
+
+.red-tip {
+  margin-left: 30rpx;
+  align-items: flex-start;
+  margin-top: 60rpx;
+  flex-direction: column;
+  color: #e51212;
+  font-size: 18rpx;
+}
+
+.red-tip text:nth-of-type(1) {
+  font-weight: bold;
+}
+
+.upload input {
+  border-bottom: 1px solid #ddd;
+  margin: 20rpx 35rpx;
+  width: 600rpx;
+  padding: 10rpx;
+}
+
+.ml30 {
+  margin-left: 30rpx;
+  /* margin: 20rpx 0 10rpx 30rpx; */
+}
+
+.radio-group {
+  margin: 20rpx 0 20rpx 0rpx;
+}
+.radio-group radio{
+  margin-right: 20rpx;
+}
+.up-btn{
+  display: block;
+  margin: 50rpx auto 30rpx;
+  width: 200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #fff;
+  font-size: 28rpx;
+  background: #59ABEA;
+  border-radius: 30rpx;
 }

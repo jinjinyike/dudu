@@ -150,7 +150,7 @@
 }
 
 .list-items .icon {
-  width: 30rpx;
+  width: 32rpx;
   height: 38rpx;
   margin-right: 20rpx;
   border-bottom: 1px solid #eee;

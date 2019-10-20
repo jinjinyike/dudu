@@ -1,8 +1,12 @@
 {
   "pages": [
-    "pages/phone/index",
     "pages/login/login",
+    "pages/self/index",
     "pages/upload/index",
+    "pages/phone/index",
+    "pages/face/index",
+    "pages/card/index",
+    "pages/msg-detail/index",
     "pages/dudu-intro/index",
     "pages/sale-service/index",
     "pages/invite-member/index",
@@ -13,15 +17,15 @@
     "pages/evuluate/index",
     "pages/order/index",
     "pages/self-detail/index",
-    "pages/self/index",
     "pages/sub-order/index",
     "pages/share/index",
     "pages/detail/index",
-    "pages/face/index",
     "pages/mall/index",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home/index"
+    "pages/home/index",
+    "pages/msg-list/index",
+    "pages/dudu-rule/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,15 +41,21 @@
     "list": [
       {
         "pagePath": "pages/face/index",
-        "text": "嘟嘟刷脸"
+        "text": "嘟嘟刷脸",
+        "iconPath": "./img/tabar/foot_index_1.png",
+        "selectedIconPath": "./img/tabar/foot_index_01.png"
       },
       {
         "pagePath": "pages/mall/index",
-        "text": "嘟嘟商城"
+        "text": "嘟嘟商城",
+        "iconPath": "./img/tabar/foot_mall_2.png",
+        "selectedIconPath": "./img/tabar/foot_mall_02.png"
       },
       {
         "pagePath": "pages/self/index",
-        "text": "个人中心"
+        "text": "个人中心",
+        "iconPath": "./img/tabar/foot_user_3.png",
+        "selectedIconPath": "./img/tabar/foot_user_03.png"
       }
     ]
   }

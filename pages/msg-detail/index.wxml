@@ -1,0 +1,10 @@
+<!-- pages/msg-detail/index.wxml -->
+<!-- <text>pages/msg-detail/index.wxml</text> -->
+<view class="msg-con">
+  <view class="msg-title ">
+    <text>{{msg.title}}</text>
+    <view>{{msg.add_time}}</view>
+  </view>
+  <rich-text nodes="{{msg.content}}" class='rich-html'></rich-text>
+  <!-- <view class="msg-detail">{{msg.content}}</view> -->
+</view>

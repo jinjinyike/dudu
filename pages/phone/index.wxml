@@ -3,9 +3,10 @@
   <view class='input-con'>
     <view class='relate'>
       <input placeholder='请输入手机号码' maxlength='11' bindinput='bindinput' data-key='phone'></input>
-      <text class='code'>{{btntext}}</text>
+      <text class='code' bindtap='getCode'>{{btntext}}</text>
     </view>
-    <input placeholder='请输入验证码' maxlength='6' bindinput='bindinput' type="number"></input>
+    <input placeholder='请输入验证码' maxlength='6' bindinput='bindinput' type="num" data-key='vcode'></input>
+    <input placeholder='请输入推荐码' maxlength='10' bindinput='bindinput' data-key="intr_no"></input>
   </view>
   <button class='submit' bindtap='submit'>提交绑定
   </button>
