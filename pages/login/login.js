@@ -29,8 +29,10 @@ Page({
           data: {code:res.code},
           method: 'post',
           success: res=> {
-            app.globalData.wx=res;
-            wx.setStorageSync('wx', res);
+            app.globalData.user=res.data;
+            app.globalData.session_id = res.session_id;
+            wx.setStorageSync('session', res.session_id);
+            wx.setStorageSync('user', res.data);
             if(res.code==4001){
               wx.navigateTo({
                 url:'../phone/index'

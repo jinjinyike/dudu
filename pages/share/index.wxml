@@ -19,5 +19,5 @@
   </image>
   <view class='share-text'>点击保存可分享到微信好友、朋友圈、微信群</view>
   <!-- <button class='share-btn'>保存图片</button> -->
-  <view class='share-god'>分享赚钱规则</view>
+  <view class='share-god' bindtap='shareRule'>分享赚钱规则</view>
 </view>

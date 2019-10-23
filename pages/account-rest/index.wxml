@@ -10,7 +10,7 @@
     <view class='his-title his-tr'>
       <view>时间</view>
       <view>赚取方式</view>
-      <view>赚取分润</view>
+      <view>资金变动</view>
     </view>
     <view class='his-tr' wx:for='{{list}}' wx:key='index'>
       <view>{{item.add_time}}</view>

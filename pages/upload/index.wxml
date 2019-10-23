@@ -1,7 +1,7 @@
 <!--pages/upload/index.wxml-->
 <view class='upload'>
   <view class='flex flex-pri'>
-    <image src='{{obj.head_img}}' alt='头像' class='touxiang'></image>
+    <image src='{{obj.head_img? HOST+obj.head_img:"../../img/icons/touxiang.png"}}' alt='头像' class='touxiang'></image>
     <text>{{obj.nickname}}</text>
     <text>{{obj.lev_name}}</text>
   </view>

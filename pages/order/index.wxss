@@ -3,4 +3,9 @@
 .order-money button{
   margin: 0;
 }
+.no-data{
+  text-align: center;
+  margin-top: 100rpx;
+  color: #666;
+}
 

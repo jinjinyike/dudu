@@ -12,7 +12,7 @@
       <text class='people'>{{obj.sale_num}}人已订购</text>
       <view class='sell'>
         <text>我要订购</text>
-        <input type='number' value="{{num}}" bindinput="changeNum" />
+        <input type='number' value="{{num}}" bindinput="changeNum" maxlength='8'/>
         <text>台</text>
       </view>
     </view>

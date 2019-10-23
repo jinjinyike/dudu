@@ -18,19 +18,20 @@ const md5 = require('./md5.js')
  }
  */
 const request = (options) => {
-  const loading = options.loading ? setTimeout(() => {
+  const loading = !options.loading? setTimeout(() => {
     wx.showLoading({
       title: '数据加载中...',
       mask: true
     });
   }, typeof options.loading == 'number' ? options.loading : 300) : 0;
   let obj = {}
-  if (app.globalData.userInfo) {
+  if (!app.globalData.session_id){
+    app.globalData.session_id = wx.getStorageSync('session')
+  }
+  if (app.globalData.session_id && !options.url.includes('login')) {
     obj = {
-      id: app.globalData.userInfo.id,
-      time: moment().unix()
+      sessionid: app.globalData.session_id,
     }
-    obj.crfs = md5(`${obj.time}company${obj.id}`)
   }
   return wx.request({
     method: options.method || 'GET',
@@ -59,12 +60,10 @@ const request = (options) => {
       // console.error(res.data)
     },
     complete: function() {
-      if (options.loading) {
         clearTimeout(loading);
         wx.hideLoading();
-      }
+      // wx.hideLoading();
       typeof options.complete === 'function' && options.complete.call(this);
-
     }
   });
 }

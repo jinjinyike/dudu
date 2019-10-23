@@ -36,8 +36,14 @@ Page({
   },
   withdraw() {
     if (!this.data.withdrowMoney) {
-      wx.showToast({
+     return  wx.showToast({
         title: '请填写金额',
+        icon: 'none'
+      })
+    }
+    if (this.data.withdrowMoney == 0 || Number(this.data.withdrowMoney) < 0 || typeof (this.data.withdrowMoney)!=Number) {
+      return wx.showToast({
+        title: '请正确填写金额',
         icon: 'none'
       })
     }

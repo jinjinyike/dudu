@@ -13,7 +13,7 @@
     <view class='blue' bindtap='editCard'>修改提现银行卡</view>
     </view>
     <view class='flex flex-center'>余额提现：
-      <input type='num' bindinput='changeMoney'/>
+      <input type='number' bindinput='changeMoney' placeholder='请填写金额' maxlength='10'/>
     </view>
     <view class='rest-text'>最低可提现：{{money}}元</view>
     <button bindtap='withdraw'>马上提现</button>

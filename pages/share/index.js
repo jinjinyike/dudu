@@ -15,7 +15,11 @@ Page({
     id:'',
     obj:{}
   },
-
+  shareRule(){
+    wx.navigateTo({
+      url: '../dudu-rule/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

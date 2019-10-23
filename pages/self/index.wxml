@@ -1,7 +1,7 @@
 <!--pages/self/index.wxml-->
 <view class='self-top'>
   <view class='flex'>
-    <image src='{{HOST+obj.head_img}}' alt='头像' class='self-img' bindtap='goDetail'></image>
+    <image src='{{obj.head_img?HOST+obj.head_img:"../../img/icons/touxiang.png"}}' alt='头像' class='self-img' bindtap='goDetail'></image>
     <view class='self-flex'>
       <text><text class='name'>{{obj.nickname}}</text> {{obj.lev_name}}</text>
       <text>业务员：{{obj.intr_name}}</text>

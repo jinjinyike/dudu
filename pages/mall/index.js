@@ -65,6 +65,12 @@ Page({
   buy(e) {
     let id = e.currentTarget.dataset.id;
     wx.navigateTo({
+      url: `../sub-order/index?id=${id}&num=${1}`,
+    })
+  },
+  goDetail() {
+    let id = e.currentTarget.dataset.id;
+    wx.navigateTo({
       url: '../detail/index?id=' + id,
     })
   },

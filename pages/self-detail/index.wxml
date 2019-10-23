@@ -14,7 +14,7 @@
   </view>
   <view class='self-items' wx:for='{{inputList}}'>
     <text>{{item.label}}</text>
-    <input type='num' wx:if='{{edit}}' value='{{msg[item.key]}}' :key='{{item.key}}' data-key='{{item.key}}' maxlength='{{item.maxLength}}' bindinput='changeInput'></input>
+    <input type='num' wx:if='{{edit}}' value='{{msg[item.key]}}' :key='{{item.key}}' data-key='{{item.key}}' maxlength='{{item.maxLength}}' bindinput='changeInput' placeholder='{{item.label}}'></input>
     <text wx:else>{{msg[item.key]}}</text>
   </view>
 </view>

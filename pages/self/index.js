@@ -58,30 +58,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (!app.globalData.wx.openid) {
-      wx.navigateTo({
-        url: '../login/login',
-      })
-    }
-    request({
-      url: API.personData,
-      method: 'post',
-      success: res => {
-        let {list}=this.data
-        if(res.level!==1){
-          list.splice(1,1)
-        }
-        this.setData({
-          obj: res,
-          list
-        })
-        app.globalData.user = res
-      },
-      fail: function(res) {
-
-      },
-      complete: function(res) {},
-    })
+    
+    
 
   },
   goRestAccount() { //余额
@@ -138,7 +116,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
+    console.log(app.globalData)
+    if (!app.globalData.session_id) {
+      wx.navigateTo({
+        url: '../login/login',
+      })
+    }
+    request({
+      url: API.personData,
+      method: 'post',
+      success: res => {
+        let { list } = this.data
+        if (res.level !== 1 && list[1].text =='成为推广会员') {
+          list.splice(1, 1)
+        } else if (res.level == 1 && list[0].text =='旗下会员管理'){
+          list.splice(0, 1)
+        }
+        this.setData({
+          obj: res,
+          list
+        })
+        app.globalData.user = res
+      },
+      fail: function (res) {
+
+      },
+      complete: function (res) { },
+    })
   },
 
   /**

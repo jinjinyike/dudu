@@ -1,6 +1,6 @@
 <!--pages/order/index.wxml-->
 <view>
-  <view class='pro-cont box' wx:for='{{list}}' wx:key='{{index}}'>
+  <view wx:if='{{list.length}}' class='pro-cont box' wx:for='{{list}}' wx:key='{{index}}'>
     <view class='pro-intd'>
       <image src='{{HOST+item.img}}' alt='商品'></image>
       <view class='pro-sell'>
@@ -24,5 +24,8 @@
       <button wx:if='{{type==2}}' class='pay-sub'>确认收获</button>
       <button wx:if='{{type==3}}' class='pay-sub' bindtap='pingjia' data-index='{{index}}'>马上评价</button>
     </view>
+  </view>
+  <view >
+    <view class='no-data'>暂无订单</view>
   </view>
 </view>

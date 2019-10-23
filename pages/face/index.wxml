@@ -1,7 +1,7 @@
 <!--pages/face/index.wxml-->
 <swiper indicator-dots='true' indicator-active-color='#FF0000' autoplay='true'>
-  <swiper-item wx:for="{{swiperList}}" wx:key='index'>
-    <image src='{{HOST+item.img}}'></image>
+  <swiper-item wx:for="{{swiperList}}" wx:key='index' class='swiperItem'>
+    <image src='{{HOST+item.img}}' class='swiperImg'></image>
   </swiper-item>
 </swiper>
 <view class='con'>
@@ -18,7 +18,7 @@
     <text>精选活动</text>
   </view>
   <view class='list-con'>
-    <view class='list-item' wx:for='{{list}}' wx:key='index' data-id='{{item.id}}' bindtap='detail'>
+    <view class='list-item' wx:for='{{list}}' wx:key='index' data-id='{{item.id}}' catchtap='detail'>
       <image src='{{HOST+item.img}}' alt='图片'></image>
       <view class='p20'>
         <view class='item-text'>
@@ -28,7 +28,7 @@
           <view>￥
             <text>{{item.sale_money}}</text>
           </view>
-          <view class='buy' data-id='{{item.id}}' bindtap='buy'>立即订购</view>
+          <view class='buy' data-id='{{item.id}}' catchtap='buy'>立即订购</view>
         </view>
       </view>
 

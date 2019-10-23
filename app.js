@@ -40,6 +40,7 @@ App({
   globalData: {
     userInfo: null,
     user: {},
-    wx: {}
+    wx: {},
+    session_id:''
   }
 })

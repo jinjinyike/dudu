@@ -50,6 +50,7 @@ Page({
     if(!this.data.num){
       return wx.showToast({
         title: '请填写订购数量',
+        icon:'none'
       })
     }
     wx.navigateTo({

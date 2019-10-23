@@ -13,25 +13,30 @@ page{
   padding: 0 23rpx;
   border-bottom: 1px solid #ccc;
   color: #999;
-  font-size: 28rpx;
+  font-size: 32rpx;
 }
 .relate{
   position: relative;
+  border-bottom: 1px solid #ccc;
+}
+.relate input{
+  border: none;
+  width: 60%;
 }
 .code{
   position: absolute;
   right: 0;
   top: 21.5rpx;
   width: 200rpx;
-  height: 60rpx;
+  height: 70rpx;
   border-radius: 200rpx;
   color: #fff;
-  line-height: 60rpx;
+  line-height: 70rpx;
   display: inline-block;
-  font-size: 24rpx;
+  font-size: 28rpx;
   background: #59abea;
   text-align: center;
-  z-index: 2;
+  z-index: 200;
 }
 .submit {
   width: 400rpx;

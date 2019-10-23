@@ -48,21 +48,20 @@ Page({
       method: 'POST',
       loading: false,
       success: res => {
-        // this.setData({ vcode:res.msg.code})
-        if (!res.code) {
+        if (res.msg.code) {
           let _this = this;
           let coden = 60 // 定义60秒的倒计时
           let codeV = setInterval(function() {
-            _this.setData({ // _this这里的作用域不同了
+            _this.setData({ 
               btntext: (--coden) + 's'
             })
-            if (coden == -1) { // 清除setInterval倒计时，这里可以做很多操作，按钮变回原样等
+            if (coden == -1) { // 清除setInterval倒计时，
               clearInterval(codeV)
               _this.setData({
                 btntext: '获取验证码'
               })
             }
-          }, 1000) //  1000是1秒
+          }, 1000) 
         } else {
           wx.showToast({
             title: res.msg,

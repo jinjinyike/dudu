@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/self/index",
-    "pages/upload/index",
-    "pages/phone/index",
     "pages/face/index",
+    "pages/dudu-intro/index",
+    "pages/self/index",
+    "pages/phone/index",
+    "pages/upload/index",
     "pages/card/index",
     "pages/msg-detail/index",
-    "pages/dudu-intro/index",
     "pages/sale-service/index",
     "pages/invite-member/index",
     "pages/rest-withraw/index",

@@ -57,7 +57,7 @@
     <text>精选活动</text>
   </view>
   <view class='list-con'>
-    <view class='list-item' wx:for='{{list}}' wx:key='index'>
+    <view class='list-item' wx:for='{{list}}' wx:key='index' bindtap='goDetail' data-id='{{item.id}}'>
       <image src='{{HOST+item.img}}' alt='图片'></image>
       <view class='p20'>
         <view class='item-text'>

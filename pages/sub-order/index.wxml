@@ -2,7 +2,7 @@
 <view class='bgcon'>
   <view class='pro-cont'>
     <view class='pro-intd'>
-      <image src='{{msg.good.img}}' alt='商品'></image>
+      <image src='{{HOST+msg.good.img}}' alt='商品'></image>
       <view class='pro-sell'>
         <text>{{msg.good.name}}
 </text>
@@ -17,17 +17,17 @@
       </view>
       <view class='order-list'>
         <text>收货人：</text>
-        <input wx:if='{{order}}' value='{{user.nickname}}' class="order-input" placeholder="业务员" bindinput="bindKeyInput" data-key='nickname' maxlength='15' />
+        <input wx:if='{{order}}' value='{{user.nickname}}' class="order-input" placeholder="请填写收货人" bindinput="bindKeyInput" data-key='nickname' maxlength='15' />
         <text wx:else>{{user.nickname}}</text>
       </view>
       <view class='order-list'>
         <text>手机号：</text>
-        <input wx:if='{{order}}' value='{{user.tel}}' class="order-input" placeholder="业务员" bindinput="bindKeyInput" data-key='tel' type='number' maxlength='11' />
+        <input wx:if='{{order}}' value='{{user.tel}}' class="order-input" placeholder="请填写手机号" bindinput="bindKeyInput" data-key='tel' type='number' maxlength='11' />
         <text wx:else>{{user.tel}}</text>
       </view>
       <view class='order-list'>
         <text>收货地址：</text>
-        <input wx:if='{{order}}' value='{{user.address}}' class="order-input" placeholder="业务员" bindinput="bindKeyInput" data-key='address' maxlength='20' />
+        <input wx:if='{{order}}' value='{{user.address}}' class="order-input"  bindinput="bindKeyInput" data-key='address' maxlength='20' placeholder='请填写地址'/>
         <text wx:else>{{user.address}}</text>
       </view>
     </view>

@@ -18,7 +18,7 @@ Page({
     flexList: [{
       name: '商城认证',
       icon: '../../img/icons/face-1.png',
-      path: '../card/index'
+      path: '../upload/index'
     }, {
       name: '嘟嘟介绍',
       icon: '../../img/icons/face-2.png',
@@ -26,7 +26,7 @@ Page({
     }, {
       name: '分享赚钱',
       icon: '../../img/icons/face-3.png',
-      path: '../share/index'
+      path: '../dudu-rule/index'
     }]
   },
 

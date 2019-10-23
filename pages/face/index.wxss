@@ -3,7 +3,9 @@
 .con {
   padding: 20rpx;
 }
-
+.swiperImg{
+  width: 100%;
+}
 .intro {
   display: flex;
   padding: 30rpx 80rpx;
@@ -25,6 +27,9 @@
   width: 88rpx;
   height: 88rpx;
   margin: 0 auto 30rpx;
+}
+.list-item{
+  margin-bottom: 30rpx;
 }
 
 

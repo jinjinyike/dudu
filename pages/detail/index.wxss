@@ -29,6 +29,7 @@
   border: 1px solid #ccc;
   width: 50px;
   margin: 0 5px;
+  text-align: center;
 }
 .detail {
   margin: 20rpx auto 120rpx;

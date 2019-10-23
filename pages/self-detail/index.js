@@ -57,11 +57,12 @@ Page({
     wx.chooseImage({
       count:1,
       success: res=> {
-        // console.log(res)
+        console.log(app.globalData.session_id)
         wx.uploadFile({
           url: API.upHeadImg,
           filePath: res.tempFilePaths[0],
           name: 'head_img',
+          header: { sessionid: app.globalData.session_id},
           success:_res=>{
             wx.showToast({
               title: '修改成功',

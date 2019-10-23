@@ -1,4 +1,4 @@
-const HOST = 'http://www.haixm.cn:8080';
+const HOST = 'https://www.haixm.cn';
 
 module.exports = {
   HOST,

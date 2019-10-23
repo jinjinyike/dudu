@@ -1,16 +1,18 @@
 <!--pages/card/index.wxml-->
 <view class='card'>
   <view class='flex'>
-    <text>开户行</text>
-    <input bindinput='bindinput' value='{{obj.card_name}}' data-key='card_name' placeholder='开户行' />
+    <text>姓名</text>
+    <input bindinput='bindinput' value='{{obj.card_name}}' data-key='card_name' placeholder='姓名' />
   </view>
   <view class='flex'>
     <text>银行卡号</text>
     <input bindinput='bindinput' value='{{obj.card_number}}' data-key='card_number' placeholder='银行卡号' />
   </view>
   <view class='flex'>
-    <text>银行名称</text>
-    <input bindinput='bindinput' value='{{obj.bank_name}}' data-key='bank_name' placeholder='银行名称' />
+    <text>开户行名称</text>
+    <input bindinput='bindinput' value='{{obj.bank_name}}' data-key='bank_name' placeholder='开户行名称' />
   </view>
+
+
   <button bindtap='save' class='save-btn'>保存</button>
 </view>

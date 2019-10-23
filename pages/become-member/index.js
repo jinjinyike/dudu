@@ -20,9 +20,8 @@ Page({
    */
   onLoad: function(options) {
     this.setData({user:app.globalData.user,HOST})
-    wx.request({
+    request({
       url: API.toIntr,
-      // data: '',
       method: 'post',
       success: res => {
         this.setData({msg:res.msg})

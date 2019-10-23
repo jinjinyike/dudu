@@ -51,12 +51,12 @@ Page({
       title: '数据加载中...',
     })
     let {obj,list}=this.data;
-    wx.request({
+    request({
       url: API.orderList,
       data: obj,
       method: 'POST',
       success: res => {
-        if (res.legnth === 0) {
+        if (res.data.data.length === 0) {
           return
         }
         obj.page += 1
