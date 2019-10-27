@@ -40,7 +40,7 @@
       <view>{{item.nickname}}</view>
       <!-- <view>分小</view> -->
       <view>{{item.money_sum}}</view>
-      <text class='bus-man'>管理</text>
+      <text class='bus-man' bindtap='gotoUp' data-id='{{item.uid}}'>管理</text>
     </view>
   </view>
 </view>

@@ -1,11 +1,12 @@
 <!--pages/invite-member/index.wxml-->
 <view class='invite-mem'>
-  <image src='../../img/icons/logo.png' alt='touxiang'></image>
-  <view class='f32'>张鹏</view>
-  <view class='f24'>普通会员</view>
-  <image src='../../img/icons/logo.png' alt='touxiang'></image>
+  <image src='{{HOST+msg.head_img}}' alt='touxiang'></image>
+  <view class='f32'>{{msg.nickname}}</view>
+  <view class='f24'>{{msg.level==4?'业务总监':msg.level==3?'业务经理':'业务员'}}</view>
+  <image src='{{HOST+msg.intr_img}}' alt='touxiang' bindtap='previewImage'></image>
+  <view class='f28'>推荐码：{{msg.intr_no}}</view>
   <view class='f28'>微信扫一扫成为嘟嘟会员</view>
   <text class='f20'>点击保存可分享到微信好友、朋友圈、微信群</text>
-  <button>保存二维码</button>
+  <button bindtap='saveImg'>保存二维码</button>
 </view>
-<view class='share'>分享赚钱规则</view>
+<view class='share' bindtap='share'>分享赚钱规则</view>

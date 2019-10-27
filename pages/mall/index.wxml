@@ -16,7 +16,7 @@
       </view>
       <view class='price'>
         <text>¥{{hotList[0].sale_money}}</text>
-        <text>去抢购 >></text>
+        <text bindtap='buy'>去抢购 >></text>
       </view>
     </view>
     <view class='hot-other' wx:if='{{hotList[1].id}}' data-id='{{hotList[1].id}}' bindtap='buy'>

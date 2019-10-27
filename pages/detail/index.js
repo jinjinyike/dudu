@@ -15,8 +15,9 @@ Page({
    */
   data: {
     HOST,
-    obj: {},
-    num: ''
+    obj: {
+    },
+    num: 1
   },
 
   /**
@@ -112,7 +113,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  // onShareAppMessage: function () {
 
-  }
+  // }
 })

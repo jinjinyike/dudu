@@ -25,7 +25,8 @@
     "pages/logs/logs",
     "pages/home/index",
     "pages/msg-list/index",
-    "pages/dudu-rule/index"
+    "pages/dudu-rule/index",
+    "pages/out/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

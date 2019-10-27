@@ -1,39 +1,20 @@
-// pages/sale-service/index.js
-const app = getApp();
-const request = require('../../utils/request');
-import {
-  API,
-  HOST
-} from '../../utils/config.js';
+// pages/out/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    msg:{}
+    url:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    request({
-      url: API.usNews,
-      method: 'post',
-      success: res=> {
-        console.log(res)
-        this.setData({msg:res.data})
-      },
-      fail: function(res) {},
-      complete: function(res) {},
-    })
+    this.setData({ url:options.url})
   },
-callphone(){
-  wx.makePhoneCall({
-    phoneNumber: this.data.msg.kfrx //仅为示例，并非真实的电话号码
-  })
-},
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

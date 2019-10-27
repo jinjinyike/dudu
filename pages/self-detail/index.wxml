@@ -2,7 +2,7 @@
 <view class='self-detail'>
   <view class='self-items'>
     <text>头像</text>
-    <image src='{{msg.head_img}}' alt='touxiang' bindtap='changeImg'></image>
+    <image src='{{HOST+msg.head_img}}' alt='touxiang' bindtap='changeImg'></image>
   </view>
   <view class='self-items'>
     <text>性别</text>
@@ -17,5 +17,25 @@
     <input type='num' wx:if='{{edit}}' value='{{msg[item.key]}}' :key='{{item.key}}' data-key='{{item.key}}' maxlength='{{item.maxLength}}' bindinput='changeInput' placeholder='{{item.label}}'></input>
     <text wx:else>{{msg[item.key]}}</text>
   </view>
+  <!-- <view class='self-items' >
+    <text>年龄</text>
+    <input type='num' wx:if='{{edit}}' value='{{msg.age}}' :key='age' data-key='age' maxlength='4' bindinput='changeInput' placeholder='年龄'></input>
+    <text wx:else>{{msg.age}}</text>
+  </view>
+  <view class='self-items' >
+    <text>收货人姓名</text>
+    <input  wx:if='{{edit}}' value='{{msg.nickname}}' :key='nickname' data-key='nickname' maxlength='4' bindinput='changeInput' placeholder='收货人姓名'></input>
+    <text wx:else>{{msg.nickname}}</text>
+  </view>
+  <view class='self-items' >
+    <text>收货人电话</text>
+    <input  wx:if='{{edit}}' value='{{msg.tel}}' :key='tel' data-key='tel' maxlength='4' bindinput='changeInput' placeholder='收货人电话'></input>
+    <text wx:else>{{msg.tel}}</text>
+  </view>
+  <view class='self-items' >
+    <text>收货人地址</text>
+    <input  wx:if='{{edit}}' value='{{msg.address}}' :key='address' data-key='address' maxlength='4' bindinput='changeInput' placeholder='收货人地址'></input>
+    <text wx:else>{{msg.address}}</text>
+  </view> -->
 </view>
 <button class='edit' bindtap='edit'>{{edit?'修改':'编辑'}}</button>

@@ -27,7 +27,7 @@ Page({
       maxLength: 20
     }, {
       key: 'tel',
-      type: 'tnumext',
+      type: 'number',
       label: '收货人电话',
       maxLength: 11
     }, {
@@ -48,7 +48,7 @@ Page({
       // data: obj,
       method: 'POST',
       success: res => {
-        msg: res
+        this.setData({ msg: res.msg})
         
       }
     })
@@ -64,6 +64,7 @@ Page({
           name: 'head_img',
           header: { sessionid: app.globalData.session_id},
           success:_res=>{
+            console.log(res)
             wx.showToast({
               title: '修改成功',
             })
@@ -189,7 +190,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  // onShareAppMessage: function() {
 
-  }
+  // }
 })

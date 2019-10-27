@@ -7,9 +7,13 @@
       <text>业务员：{{obj.intr_name}}</text>
     </view>
   </view>
-  <view class='qrcode' bindtap='selfCode'>
+  <view class='qrcode' bindtap='selfCode' wx:if='{{obj.level==1}}'>
     <image src='../../img/icons/logo.png' alt='二维码'></image>
-    <text>{{obj.level==1?'成为推广员':'我的邀请码'}}</text>
+    <text>成为推广员</text>
+  </view>
+  <view class='qrcode' wx:else bindtap='selfCode'>
+    <image src='{{qrcode}}' alt='二维码'></image>
+    <text>我的邀请码</text>
   </view>
 </view>
 <view class='self-con'>

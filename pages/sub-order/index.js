@@ -13,7 +13,8 @@ Page({
   data: {
     HOST,
     order: true,
-    options: {}
+    options: {},
+    pay:{}
   },
 
   /**
@@ -62,7 +63,7 @@ Page({
         icon: 'none'
       })
     }
-    request({
+    request({//下单
       url: API.subOrder,
       method: 'post',
       data: { ...this.data.user,
@@ -71,6 +72,37 @@ Page({
       success: res => {
         console.log(res)
         this.setData({order:false,pay:res.data})
+        request({
+          url: API.wxpay,
+          data: { id: res.data.id, money_sum: res.data.money_sum, openid: app.globalData.user.open_id },
+          method: 'post',
+          success: res => {
+            wx.requestPayment({
+              timeStamp: res.msg.timeStamp,
+              nonceStr: res.msg.nonceStr,
+              package: res.msg.package,
+              signType: res.msg.signType,
+              paySign: res.msg.paySign,
+              success: _res => {
+                // this.getList()
+                wx.showToast({
+                  title: '下单成功',
+                })
+                request({//支付后台回调
+                  url: API.paySuc,
+                  data: { out_trade_no: res.out_trade_no, type: res.type },
+                  method: 'post',
+                  success: function (res) {
+                    wx.switchTab({
+                      url: '../self/index',
+                    })
+                   },
+                })
+              }
+            })
+          },
+          complete: function (res) { },
+        })
       }
     })
   },
@@ -119,7 +151,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  // onShareAppMessage: function() {
 
-  }
+  // }
 })

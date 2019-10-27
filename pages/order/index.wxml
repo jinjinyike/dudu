@@ -1,31 +1,30 @@
 <!--pages/order/index.wxml-->
 <view>
-  <view wx:if='{{list.length}}' class='pro-cont box' wx:for='{{list}}' wx:key='{{index}}'>
-    <view class='pro-intd'>
-      <image src='{{HOST+item.img}}' alt='商品'></image>
-      <view class='pro-sell'>
-        <text>{{item.name}}
-</text>
-        <text>{{item.num}}台</text>
-        <text>¥{{item.sale_money}}</text>
+  <block wx:if='{{list.length}}'>
+    <view class='pro-cont box' wx:for='{{list}}' wx:key='{{index}}'>
+      <view class='pro-intd'>
+        <image src='{{HOST+item.img}}' alt='商品'></image>
+        <view class='pro-sell'>
+          <text>{{item.name}}</text>
+          <text>{{item.num}}台</text>
+          <text>¥{{item.sale_money}}</text>
+        </view>
+      </view>
+      <view class='order-info'>
+        <view>业务员：赵正明</view>
+        <view>收货人：{{item.con_name}}</view>
+        <view>手机号：{{item.con_tel}}</view>
+        <view>订单编号：{{item.orde_sn}}</view>
+        <view>收货地址：{{item.con_address}}</view>
+        <view>下单时间：{{item.add_time}}</view>
+      </view>
+      <view class='order-money flex'>
+        <text>实付款：¥{{item.money_sum}}</text>
+        <button wx:if='{{type==1}}' class='pay-sub' bindtap='wxPay' data-id='{{item.id}}' data-money='{{item.money_sum}}'>马上支付</button>
+        <button wx:if='{{type==2}}' class='pay-sub'>确认收获</button>
+        <button wx:if='{{type==3}}' class='pay-sub' bindtap='pingjia' data-index='{{index}}'>马上评价</button>
       </view>
     </view>
-    <view class='order-info'>
-      <view>业务员：赵正明</view>
-      <view>收货人：{{item.con_name}}</view>
-      <view>手机号：{{item.con_tel}}</view>
-      <view>订单编号：{{item.orde_sn}}</view>
-      <view>收货地址：{{item.con_address}}</view>
-      <view>下单时间：{{item.add_time}}</view>
-    </view>
-    <view class='order-money flex'>
-      <text>实付款：¥{{item.money_sum}}</text>
-      <button wx:if='{{type==1}}' class='pay-sub'>马上支付</button>
-      <button wx:if='{{type==2}}' class='pay-sub'>确认收获</button>
-      <button wx:if='{{type==3}}' class='pay-sub' bindtap='pingjia' data-index='{{index}}'>马上评价</button>
-    </view>
-  </view>
-  <view >
-    <view class='no-data'>暂无订单</view>
-  </view>
+  </block>
+  <view wx:else class='no-data'>暂无订单</view>
 </view>

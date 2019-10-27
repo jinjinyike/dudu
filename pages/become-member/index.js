@@ -35,11 +35,33 @@ Page({
     })
   },
   submit() {
+    let {code,msg}=this.data
     request({
       url: API.applyCz,
-      // data: '',
+      data: { openid: app.globalData.user.open_id, money: msg.money, intr_no:code},
       method: 'post',
-      success: res => {},
+      success: res => {
+        wx.requestPayment({
+          timeStamp: res.msg.timeStamp,
+          nonceStr: res.msg.nonceStr,
+          package: res.msg.package,
+          signType: res.msg.signType,
+          paySign: res.msg.paySign,
+          success: _res => {
+            console.log(_res)
+            request({//支付后台回调
+              url: API.paySuc,
+              data: { out_trade_no: res.out_trade_no, type: res.type },
+              method: 'post',
+              success: function (res) {
+                wx.switchTab({
+                  url: '../self/index',
+                })
+               },
+            })
+          }
+        })
+      },
       fail: function(res) {},
       complete: function(res) {},
     })

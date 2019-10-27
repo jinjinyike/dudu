@@ -13,6 +13,7 @@ Page({
   data: {
     HOST,
     obj: {},
+    qrcode:'',
     orderStatus: [{
       text: '代付款',
       icon: '../../img/icons/order-1.png'
@@ -96,7 +97,15 @@ Page({
       url: '../become-member/index',
     })
   }else{
-
+    wx.navigateTo({
+      url: '../invite-member/index',
+    })
+    // wx.previewImage({
+    //   urls: [this.data.qrcode],
+    // })
+    // wx.navigateTo({
+    //   url: '',
+    // })
   }
   },
   goList(e) {
@@ -132,11 +141,22 @@ Page({
         } else if (res.level == 1 && list[0].text =='旗下会员管理'){
           list.splice(0, 1)
         }
+        if(res.level!=1){
+          request({
+            url: API.selfCode,
+            method: 'post',
+            success: res => {
+              this.setData({ qrcode: HOST + '/' + res.msg.intr_img})
+            },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        }
         this.setData({
           obj: res,
           list
         })
-        app.globalData.user = res
+        // app.globalData.user = res
       },
       fail: function (res) {
 
@@ -176,7 +196,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  // onShareAppMessage: function() {
 
-  }
+  // }
 })

@@ -27,7 +27,13 @@ Page({
       complete: function(res) {},
     })
   },
-
+  gotoUp(e){
+    // console.log(e)
+    let {id}=e.currentTarget.dataset;
+    wx.navigateTo({
+      url: '../upload/index?id='+id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -73,7 +79,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  // onShareAppMessage: function () {
 
-  }
+  // }
 })

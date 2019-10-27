@@ -38,6 +38,39 @@ Page({
       this.getList()
     })
   },
+  wxPay(e){//微信支付
+    let {id,money}=e.currentTarget.dataset;
+    console.log(app)
+    request({
+      url: API.wxpay,
+      data: { id, money_sum: money, openid:app.globalData.user.open_id},
+      method: 'post',
+      success: res=> {
+        wx.requestPayment({
+          timeStamp: res.msg.timeStamp,
+          nonceStr: res.msg.nonceStr,
+          package: res.msg.package,
+          signType: res.msg.signType,
+          paySign: res.msg.paySign,
+          success:_res=>{
+            console.log(_res)
+            request({//支付后台回调
+              url: API.paySuc,
+              data: { out_trade_no: res.out_trade_no, type: res.type},
+              method: 'post',
+              success: function(res) {},
+            })
+            let obj=this.data;
+            obj.page=1;
+            this.setData({list:[],obj},_=>{
+              this.getList('clear')
+            })
+          }
+        })
+      },
+      complete: function(res) {},
+    })
+  },
   pingjia(e){
     let index=e.currentTarget.dataset.index;
     console.log(index)
@@ -46,7 +79,7 @@ Page({
       url: '../evuluate/index',
     })
   },
-  getList() {
+  getList(type) {
     wx.showLoading({
       title: '数据加载中...',
     })
@@ -56,12 +89,12 @@ Page({
       data: obj,
       method: 'POST',
       success: res => {
-        if (res.data.data.length === 0) {
+        if (res.data.length === 0) {
           return
         }
         obj.page += 1
         this.setData({
-          list: list.concat(res.data.data),
+          list: list.concat(res.data),
           obj
         })
       },
@@ -116,7 +149,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  // onShareAppMessage: function() {
 
-  }
+  // }
 })

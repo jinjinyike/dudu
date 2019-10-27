@@ -3,9 +3,7 @@
 .con {
   padding: 20rpx;
 }
-.swiperImg{
-  width: 100%;
-}
+
 .intro {
   display: flex;
   padding: 30rpx 80rpx;

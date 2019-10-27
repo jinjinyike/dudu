@@ -47,6 +47,16 @@ Page({
     })
     this.getList()
   },
+  goto(e){
+    let url=e.currentTarget.dataset.url
+    wx.navigateTo({
+      url: '../out/index?url='+url,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+    // window.location.href='www.baidu.com'
+  },
   getList() {
     wx.showLoading({
       title: '数据加载中...',

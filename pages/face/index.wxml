@@ -1,7 +1,7 @@
 <!--pages/face/index.wxml-->
-<swiper indicator-dots='true' indicator-active-color='#FF0000' autoplay='true'>
+<swiper indicator-dots='true' indicator-active-color='#FF0000' autoplay='{{true}}'>
   <swiper-item wx:for="{{swiperList}}" wx:key='index' class='swiperItem'>
-    <image src='{{HOST+item.img}}' class='swiperImg'></image>
+    <image src='{{HOST+item.img}}' class='swiperImg' bindtap='goto' data-url='{{item.url}}'></image>
   </swiper-item>
 </swiper>
 <view class='con'>

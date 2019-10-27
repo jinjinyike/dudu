@@ -2,6 +2,10 @@
 page{
   background: #F5F5F5;
 }
+.swiperImg{
+  width: 750rpx;
+  height: 300rpx;
+}
 .container {
   height: 100%;
   display: flex;
