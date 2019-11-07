@@ -8,7 +8,7 @@
 </view>
 <view class='pro-cont box'>
   <view class='pro-intd'>
-    <image src='{{obj.img}}' alt='商品'></image>
+    <image src='{{HOST+obj.img}}' alt='商品'></image>
     <view class='pro-sell'>
       <text>{{obj.name}}
 </text>
@@ -25,6 +25,6 @@
     <view>下单时间：{{obj.add_time}}</view>
   </view>
   <view class='order-money'>
-    <text>实付款：¥{{item.money_sum}}</text>
+    <text>实付款：¥{{obj.money_sum}}</text>
   </view>
 </view>

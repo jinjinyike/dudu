@@ -50,5 +50,17 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  test(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      // scanType: ['qrCode'],
+      success: res => {
+        console.log(res)
+      }
+    })
+  },
+  onShareAppMessage(){
+
   }
 })

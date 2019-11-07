@@ -28,9 +28,9 @@ const request = (options) => {
   if (!app.globalData.session_id){
     app.globalData.session_id = wx.getStorageSync('session')
   }
-  if (app.globalData.session_id && !options.url.includes('login')) {
+  if (!options.url.includes('login')) {
     obj = {
-      sessionid: app.globalData.session_id,
+      sessionid: app.globalData.session_id||0,
     }
   }
   return wx.request({

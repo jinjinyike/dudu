@@ -5,7 +5,7 @@
     <text>商场爆款</text>
   </view>
   <view class='hot-con'>
-    <view class='hot-one' wx:if='{{hotList[0].id}}' data-id='{{hotList[0].id}}' bindtap='buy'>
+    <view class='hot-one' wx:if='{{hotList[0].id}}' data-id='{{hotList[0].id}}' catchtap='buy'>
       <image src='{{HOST+hotList[0].img}}' alt='图片' class='one-img'></image>
       <view class='hot-text'>
         <view>
@@ -16,10 +16,10 @@
       </view>
       <view class='price'>
         <text>¥{{hotList[0].sale_money}}</text>
-        <text bindtap='buy'>去抢购 >></text>
+        <text >去抢购 >></text>
       </view>
     </view>
-    <view class='hot-other' wx:if='{{hotList[1].id}}' data-id='{{hotList[1].id}}' bindtap='buy'>
+    <view class='hot-other' wx:if='{{hotList[1].id}}' data-id='{{hotList[1].id}}' catchtap='buy'>
       <view class='hot-one hot-two'>
         <view class='flex'>
           <image src='{{HOST+hotList[1].img}}' alt='图片' class='two-img'></image>
@@ -37,7 +37,7 @@
           <text>去抢购 >></text>
         </view>
       </view>
-      <view class='hot-one hot-two hot-three' wx:if='{{hotList[2].id}}' data-id='{{hotList[2].id}}' bindtap='buy'>
+      <view class='hot-one hot-two hot-three' wx:if='{{hotList[2].id}}' data-id='{{hotList[2].id}}' catchtap='buy'>
         <view class='flex'>
           <image src='{{HOST+hotList[2].img}}' alt='图片' class='two-img'></image>
           <view class='hot-text'>
@@ -57,7 +57,7 @@
     <text>精选活动</text>
   </view>
   <view class='list-con'>
-    <view class='list-item' wx:for='{{list}}' wx:key='index' bindtap='goDetail' data-id='{{item.id}}'>
+    <view class='list-item' wx:for='{{list}}' wx:key='index' catchtap='goDetail' data-id='{{item.id}}'>
       <image src='{{HOST+item.img}}' alt='图片'></image>
       <view class='p20'>
         <view class='item-text'>
@@ -67,7 +67,7 @@
           <view>￥
             <text>{{item.sale_money}}</text>
           </view>
-          <view class='buy' bindtap='buy' data-id='{{item.id}}'>立即订购</view>
+          <view class='buy' catchtap='buy' data-id='{{item.id}}'>立即订购</view>
         </view>
       </view>
 

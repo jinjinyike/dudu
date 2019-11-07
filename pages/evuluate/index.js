@@ -12,7 +12,8 @@ Page({
    */
   data: {
     obj: {},
-    text:''
+    text:'',
+    HOST
   },
 
   /**

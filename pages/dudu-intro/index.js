@@ -8,6 +8,7 @@ import {
   API,
   HOST
 } from '../../utils/config.js';
+var WxParse = require('../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -25,7 +26,8 @@ Page({
       url: API.about,
       method: 'POST',
       success: res => {
-        this.setData({ con :formatRichText(res.data.content)})
+        // this.setData({ con :formatRichText(res.data.content)})
+        WxParse.wxParse('article', 'html', res.data.content, this, 5);
       }
     })
   },

@@ -130,6 +130,7 @@ Page({
       success: res=> {
         wx.showToast({
           title: res.msg,
+          duration:3000
         })
         // wx.switchTab({
         //   url: '../self/index',

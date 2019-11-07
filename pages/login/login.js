@@ -30,9 +30,9 @@ Page({
           method: 'post',
           success: res=> {
             app.globalData.user=res.data;
+            wx.setStorageSync('user', res.data);
             app.globalData.session_id = res.session_id;
             wx.setStorageSync('session', res.session_id);
-            wx.setStorageSync('user', res.data);
             if(res.code==4001){
               wx.navigateTo({
                 url:'../phone/index'
@@ -55,6 +55,11 @@ Page({
     // })
     wx.switchTab({
       url: '../face/index',
+    })
+  },
+  agree(){
+    wx.navigateTo({
+      url: '../agreement/index',
     })
   },
   /**
@@ -102,7 +107,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  // onShareAppMessage: function () {
+  onShareAppMessage: function () {
 
-  // }
+  }
 })

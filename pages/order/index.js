@@ -71,12 +71,32 @@ Page({
       complete: function(res) {},
     })
   },
-  pingjia(e){
+  pingjia(e){//评价
     let index=e.currentTarget.dataset.index;
     console.log(index)
     wx.setStorageSync('order', this.data.list[index])
     wx.navigateTo({
       url: '../evuluate/index',
+    })
+  },
+  sureGood(e){//缺人收获
+    let id = e.currentTarget.dataset.id;
+    request({
+      url: API.rece,
+      data: {id},
+      method: 'post',
+      success: res=> {
+        wx.showToast({
+          title: '确认成功',
+        })
+        let {obj}=this.data;
+        obj.page=1;
+        this.setData({list:[],obj},_=>{
+          this.getList()
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
     })
   },
   getList(type) {

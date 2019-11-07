@@ -15,8 +15,9 @@
     <view>本次分享你可赚</view>
     <view class='nub'>{{obj.rake_money}}元</view>
   </view>
-  <image class='share-img' src='../../img/icons/logo.png' alt='share'>
-  </image>
+  <image class='share-img'  src='{{HOST+intr_img}}' alt='touxiang' bindtap='previewImage'></image>
+  <!-- <image src='../../img/icons/logo.png' alt='share'>
+  </image> -->
   <view class='share-text'>点击保存可分享到微信好友、朋友圈、微信群</view>
   <!-- <button class='share-btn'>保存图片</button> -->
   <view class='share-god' bindtap='shareRule'>分享赚钱规则</view>

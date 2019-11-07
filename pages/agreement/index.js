@@ -1,4 +1,4 @@
-// pages/detail/index.js
+// pages/dudu-intro/index.js
 const app = getApp();
 const request = require('../../utils/request');
 import {
@@ -9,68 +9,29 @@ import {
   HOST
 } from '../../utils/config.js';
 var WxParse = require('../../wxParse/wxParse.js');
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    HOST,
-    obj: {
-    },
-    num: 1
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.id) {
-      this.setData({
-        id: options.id
-      })
-      request({
-        url: API.goodDeta,
-        data: {
-          id: options.id
-        },
-        method: 'post',
-        success: res => {
-          // console.log(res)
-          WxParse.wxParse('article', 'html', res.detail, this, 5);
-          // res.detail = formatRichText(res.detail)
-          this.setData({
-            obj: res
-          })
-        },
-        fail: function (res) {},
-        complete: function (res) {},
-      })
-    }
+    request({
+      url: API.argee,
+      method: 'POST',
+      success: res => {
+        // this.setData({ con :formatRichText(res.data.content)})
+        WxParse.wxParse('article', 'html', res.data.content, this, 5);
+      }
+    })
+  },
 
-  },
-  goorder() {
-    if(!this.data.num){
-      return wx.showToast({
-        title: '请填写订购数量',
-        icon:'none'
-      })
-    }
-    wx.navigateTo({
-      url: `../sub-order/index?id=${this.data.id}&num=${this.data.num}`,
-    })
-  },
-  goshare() {
-    wx.navigateTo({
-      url: `../share/index?id=${this.data.id}`,
-    })
-  },
-  changeNum(e) {
-    this.setData({
-      num: e.detail.value
-    })
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

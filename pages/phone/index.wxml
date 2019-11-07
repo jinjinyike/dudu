@@ -7,7 +7,12 @@
       <text class='code' bindtap='getCode'>{{btntext}}</text>
     </view>
     <input placeholder='请输入验证码' type='number' maxlength='6' bindinput='bindinput' type="num" data-key='vcode'></input>
-    <input placeholder='请输入推荐码' maxlength='10' bindinput='bindinput' data-key="intr_no"></input>
+    <input placeholder='请输入推荐码' maxlength='10' value='{{intr_no}}' bindinput='bindinput' data-key="intr_no" disabled='disabled'></input>
+    <view class='tip'>
+    <view>系统推荐码为：000D (注:区分大小写且推荐人不可更改）</view>
+    <view>如有疑问请拨打客服热线<text class='blue' bindtap='call'> 0372-2929993</text></view>
+    </view>
+    
   </view>
   <button class='submit' bindtap='submit'>提交绑定
   </button>

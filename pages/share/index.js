@@ -13,7 +13,8 @@ Page({
   data: {
     HOST,
     id:'',
-    obj:{}
+    obj:{},
+    intr_img:''
   },
   shareRule(){
     wx.navigateTo({
@@ -36,8 +37,21 @@ Page({
         this.setData({obj:res})
       }
     })
+    request({
+      url: API.selfCode,
+      method: 'post',
+      success: res => {
+        this.setData({ intr_img: res.msg.intr_img })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
-
+  previewImage() {
+    wx.previewImage({
+      urls: [HOST + this.data.intr_img],
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

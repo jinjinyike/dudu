@@ -62,3 +62,12 @@ page{
   width: 241rpx;
   height: 41rpx;
 }
+.tip{
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.tip view{
+  margin-bottom: 10rpx;
+}

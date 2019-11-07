@@ -10,6 +10,6 @@
     </view>
   </view>
   <view class='info'>已同意并阅读
-    <text>《用户协议》</text>
+    <text bindtap='agree'>《用户协议》</text>
   </view>
 </view>

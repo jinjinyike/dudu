@@ -39,6 +39,7 @@ module.exports = {
     upImg: `${HOST}/api/Person/up_img`, //上传图片
     disDeta: `${HOST}/api/Person/dis_deta`, //认证
     paySuc: `${HOST}/api/pay/checkwx_pay`, //支付成功回调
+    argee: `${HOST}/api/Sign/argee`, //支付成功回调
     // disDeta: `${HOST}/api/Person/dis_deta`, //认证
     checkwxPay: `${HOST}/api/Pay/checkwx_pay/out_trade_no/`, //下单回调 
     //    二维码   

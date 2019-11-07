@@ -5,6 +5,32 @@ import {
   API,
   HOST
 } from '../../utils/config.js';
+const arr= [{
+  text: '旗下会员管理',
+  icon: '../../img/icons/self-1.png',
+  path: '../member-man/index'
+}, {
+    text: '成为推广会员',
+    icon: '../../img/icons/self-2.png',
+    path: '../become-member/index'
+  }, {
+    text: '商户认证',
+    icon: '../../img/icons/self-3.png',
+    path: '../upload/index'
+  }, {
+    text: '售后服务',
+    icon: '../../img/icons/self-4.png',
+    path: '../sale-service/index'
+  }, {
+    text: '嘟嘟赚钱规则',
+    icon: '../../img/icons/self-5.png',
+    path: '../dudu-rule/index'
+  }, {
+    text: '嘟嘟赚钱简介',
+    icon: '../../img/icons/self-6.png',
+    path: './duduintro/index',
+    path: '../dudu-intro/index'
+  }]
 Page({
 // level>=2 是推广员 有邀请码 =1是不是推广员
   /**
@@ -15,7 +41,7 @@ Page({
     obj: {},
     qrcode:'',
     orderStatus: [{
-      text: '代付款',
+      text: '待付款',
       icon: '../../img/icons/order-1.png'
     }, {
       text: '待收货',
@@ -27,32 +53,8 @@ Page({
       text: '已完成',
       icon: '../../img/icons/order-4.png'
     }],
-    list: [{
-      text: '旗下会员管理',
-      icon: '../../img/icons/self-1.png',
-      path: '../member-man/index'
-    }, {
-      text: '成为推广会员',
-      icon: '../../img/icons/self-2.png',
-      path: '../become-member/index'
-    }, {
-      text: '商户认证',
-      icon: '../../img/icons/self-3.png',
-      path:'../upload/index'
-    }, {
-      text: '售后服务',
-      icon: '../../img/icons/self-4.png',
-      path:'../sale-service/index'
-    }, {
-      text: '嘟嘟赚钱规则',
-      icon: '../../img/icons/self-5.png',
-      path:'../dudu-rule/index'
-    }, {
-      text: '嘟嘟赚钱简介',
-      icon: '../../img/icons/self-6.png',
-      path: './duduintro/index',
-      path:'../dudu-intro/index'
-    }]
+    list:[],
+    
   },
 
   /**
@@ -135,28 +137,23 @@ Page({
       url: API.personData,
       method: 'post',
       success: res => {
-        let { list } = this.data
-        if (res.level !== 1 && list[1].text =='成为推广会员') {
-          list.splice(1, 1)
-        } else if (res.level == 1 && list[0].text =='旗下会员管理'){
-          list.splice(0, 1)
-        }
-        if(res.level!=1){
-          request({
-            url: API.selfCode,
-            method: 'post',
-            success: res => {
-              this.setData({ qrcode: HOST + '/' + res.msg.intr_img})
-            },
-            fail: function (res) { },
-            complete: function (res) { },
-          })
-        }
+        // let { list} = this.data
+        // if (res.level !== 1 && list[1].text =='成为推广会员') {
+        //   list.splice(1, 1)
+        // } else if (res.level == 1 && list[0].text =='旗下会员管理'){
+        //   list.splice(0, 1)
+        // }
+        let newArr=[];
+        newArr=arr.filter(ele => ele.text != (res.level == 1 ? '旗下会员管理' :'成为推广会员'))
+        // if(res.level==1){
+        //   newArr.unshift(arr[1])
+        // }else{
+        //   newArr.unshift(arr[0])
+        // }
         this.setData({
           obj: res,
-          list
+          list: newArr
         })
-        // app.globalData.user = res
       },
       fail: function (res) {
 

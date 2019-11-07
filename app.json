@@ -1,10 +1,12 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/agreement/index",
+    "pages/phone/index",
     "pages/face/index",
+    "pages/index/index",
     "pages/dudu-intro/index",
     "pages/self/index",
-    "pages/phone/index",
     "pages/upload/index",
     "pages/card/index",
     "pages/msg-detail/index",
@@ -21,7 +23,6 @@
     "pages/share/index",
     "pages/detail/index",
     "pages/mall/index",
-    "pages/index/index",
     "pages/logs/logs",
     "pages/home/index",
     "pages/msg-list/index",

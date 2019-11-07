@@ -14,14 +14,52 @@ Page({
     phone: '',
     btntext: '获取验证码',
     vcode: '',
-    intr_no:''
+    intr_no:'',
+    disabled:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(options)
+    if(options.code){
+      this.setData({ intr_no: options.code, disabled:true})
+      this.wxlogo()
+    }
+  },
+  wxlogo() {
+    wx.login({
+      success(res) {
+        console.log(res)
+        request({
+          url: API.login,
+          data: { code: res.code },
+          method: 'post',
+          success: res => {
+            
+            app.globalData.session_id = res.session_id;
+            wx.setStorageSync('session', res.session_id);
+            if (res.code == 2000){
+              app.globalData.user = res.data;
+              wx.setStorageSync('user', res.data);
+              wx.switchTab({
+                url: '../face/index',
+              })
+            }
+            // if (res.code == 4001) {
+            //   wx.navigateTo({
+            //     url: '../phone/index'
+            //   })
+            // } else {
+            
+            // }
+          },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }
+    })
   },
   bindinput(e) {
     let key = e.target.dataset.key;
@@ -119,11 +157,18 @@ Page({
         //   key: 'userInfo',
         //   data: JSON.stringify(res.data),
         // })
+        app.globalData.user = res.data;
+        wx.setStorageSync('user', res.data);
         wx.switchTab({
           url: '../face/index',
         })
         
       }
+    })
+  },
+  call(){
+    wx.makePhoneCall({
+      phoneNumber: '0372-2929993',
     })
   },
   /**

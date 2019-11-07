@@ -1,4 +1,6 @@
 <!--pages/detail/index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+
 <view class='pro-con'>
   <!-- <image src='{{HOST+obj.imgs}}' alt='商品'></image> -->
   <swiper indicator-dots='true' indicator-active-color='#FF0000' autoplay='{{true}}'>
@@ -26,7 +28,9 @@
 <view class='detail p20'>
   <view class='pro-title'>商品详情</view>
   <view class='pro-info'>
-    <rich-text nodes="{{obj.detail}}" class='rich-html'></rich-text>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+
+    <!-- <rich-text nodes="{{obj.detail}}" class='rich-html'></rich-text> -->
     <!-- {{obj.detail}} -->
     <!-- 人脸支付是使用生物识别技术在支付阶段通过“扫脸”来取代传统密码。人脸支付的使用，优化了支付流程，有效提升用户日常购物消费体验，提高了商家的交易效率，带动了零售业的发展。 -->
   </view>
@@ -34,5 +38,5 @@
 </view>
 <view class='fix-btn'>
   <button bindtap='goorder'>立即订购</button>
-  <button bindtap='goshare' wx:if='{{obj.u_level!=1}}'>分享赚钱</button>
+  <button bindtap='goshare' wx:if='{{obj.u_level>=2}}'>分享赚钱</button>
 </view>

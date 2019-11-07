@@ -41,7 +41,7 @@ Page({
         icon: 'none'
       })
     }
-    if (this.data.withdrowMoney == 0 || Number(this.data.withdrowMoney) < 0 || typeof (this.data.withdrowMoney)!=Number) {
+    if (this.data.withdrowMoney == 0 || Number(this.data.withdrowMoney) < 0 || typeof (Number(this.data.withdrowMoney))!='number') {
       return wx.showToast({
         title: '请正确填写金额',
         icon: 'none'
