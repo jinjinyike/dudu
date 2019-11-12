@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function() {
+    this.overShare()
     // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
@@ -16,8 +17,8 @@ App({
     if (wx.openid && !this.globalData.wx.openid) {
       this.globalData.wx = obj;
     }
-    if(!this.globalData.user.id){
-      this.globalData.user = wx.getStorageSync('user')||{}
+    if (!this.globalData.user.id) {
+      this.globalData.user = wx.getStorageSync('user') || {}
     }
     wx.getSetting({
       success(res) {
@@ -29,7 +30,7 @@ App({
               console.log('授权成功')
             }
           })
-        }else{
+        } else {
           console.log('授权le')
         }
       }
@@ -55,10 +56,35 @@ App({
     //   }
     // })
   },
+  overShare: function() {
+    //监听路由切换
+    //间接实现全局设置分享内容
+    wx.onAppRoute(function(res) {
+      //获取加载的页面
+      let pages = getCurrentPages(),
+        //获取当前页面的对象
+        view = pages[pages.length - 1],
+        data;
+      if (view) {
+        data = view.data;
+        console.log('是否重写分享方法', data.isOverShare);
+        if (!data.isOverShare) {
+          data.isOverShare = true;
+          view.onShareAppMessage = function() {
+            //你的分享配置
+            return {
+              title: '嘟嘟赚钱',
+              path: '/pages/login/login'
+            };
+          }
+        }
+      }
+    })
+  },
   globalData: {
     userInfo: null,
     user: {},
     wx: {},
-    session_id:''
+    session_id: ''
   }
 })

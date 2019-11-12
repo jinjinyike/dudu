@@ -54,11 +54,14 @@
   <input placeholder='请输入联系人邮箱' data-key='email' bindinput='changetext' value='{{obj.email}}'></input>
   <view>8、商家简称</view>
   <input placeholder='请输入商家简称' data-key='nickname' bindinput='changetext' value='{{obj.nickname}}'></input>
+  <view>9、支付宝账号(选填)</view>
+<input placeholder='请输入支付宝账号' data-key='ali_code' bindinput='changetext' value='{{obj.ali_code}}'></input>
   <view class='flex red-tip'>
     <text>上传身份证要求：</text>
     <text>1、必须为本人的证件，否则认证失败</text>
     <text>2、证件需在有效限内，否则认证失败</text>
     <text>3、证件照片要清晰，照片格式为jpeg、jpg、png</text>
   </view>
+
 </view>
 <button class='up-btn' bindtap='save'>提交认证</button>

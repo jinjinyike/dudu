@@ -6,7 +6,7 @@ import {
   HOST
 } from '../../utils/config.js';
 const orderType={
-  1: '代付款订单',
+  1: '待付款订单',
   2: '待收货订单',
   3: '待评价订单',
   4:'已完成订单',
@@ -169,7 +169,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  // onShareAppMessage: function() {
+  onShareAppMessage: function() {
 
-  // }
+  }
 })

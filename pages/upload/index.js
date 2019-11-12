@@ -99,7 +99,7 @@ Page({
           icon: 'none'
         })
       }
-      if (!obj[key] && key != 'open_img' && key !='frbank_img'){
+      if (!obj[key] && key != 'open_img' && key != 'frbank_img' && key != 'ali_code'){
         return wx.showToast({
           title: '请填写完整信息',
           icon: 'none'
@@ -128,19 +128,23 @@ Page({
       data: obj,
       method: 'post',
       success: res=> {
+        setTimeout(function () {
         wx.showToast({
           title: res.msg,
-          duration:3000
+          duration:2000
         })
+        },100)
         // wx.switchTab({
         //   url: '../self/index',
         // })
       },
       fail: function(res) {
+        setTimeout(function () {
         wx.showToast({
           title: '认证失败',
           icon:'none'
         })
+        },100)
       },
       complete: function(res) {},
     })

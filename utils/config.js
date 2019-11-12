@@ -1,4 +1,5 @@
-const HOST = 'https://www.haixm.cn';
+// const HOST = 'https://www.haixm.cn';
+const HOST = 'https://www.ddsl.shop';
 
 module.exports = {
   HOST,
